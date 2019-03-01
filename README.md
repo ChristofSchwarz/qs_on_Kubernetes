@@ -2,6 +2,7 @@
 
 
 ## Troubleshooting
+### Authentication failed
 
 When you go to the new hub on Qlik Sense for Elastic, you may see this error message 
 ```
@@ -9,7 +10,7 @@ When you go to the new hub on Qlik Sense for Elastic, you may see this error mes
 ```
 Let's find out what the issue is. Use SSH on the Linux where your Kubernetes is installed
 
-### 1) Find out the id of the "qsefe-edge-auth"
+ 1) Find out the id of the "qsefe-edge-auth"
 ```
 kubectl get pods | grep "qsefe-edge-auth"
 ```
@@ -17,7 +18,7 @@ This should return one row like this
 qsefe-edge-auth-54f69c7659-gbt5n                                  2/2     Running   0          12h
 Now you know the exact instance id which we will copy/paste in the next command
 
-### 2) Retrieve the log of the container
+ 2) Retrieve the log of the container
 ```
 kubectl logs qsefe-edge-auth-54f69c7659-h4brk -c edge-auth | grep "ERROR"
 ```
