@@ -22,13 +22,15 @@ kubectl get pods | grep "qsefe-edge-auth"
 
  __2) Retrieve the log of the container__
  
-   The log will be pretty long, so using "grep" we will filter only such rows where the keyword "ERROR" is found
+   The log will be pretty long, so using "grep" we will filter only such rows where the keyword "ERROR" is found. Since the pod launches two containers (oidc and edge-auth) we also have to add -c and tell the command to return the logs of "edge-auth" container
 ```
 kubectl logs qsefe-edge-auth-xxxxxxxxxx-xxxxx -c edge-auth | grep "ERROR"
 ```
 
-__3) search for the error___
+__3) search for the error__
 
-   The syntax is JSON with no line-breaks, which makes it hard to read as a human. 
+The syntax is JSON with no line-breaks, which makes it hard to read as a human. 
+
 ![alttext](https://github.com/ChristofSchwarz/pics/raw/master/issued_in_future.png "screenshot")   
-In this example the 
+
+In this example the error message is "id_token issued in the future". It may help to copy/paste the Json chunk and put it in an online-beautifyer like this: https://jsonformatter.curiousconcept.com/
