@@ -3,7 +3,7 @@
 
 go <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes">back</a>
 
-### Authentication failed
+## Authentication failed
 
 When you go to the new hub on Qlik Sense for Elastic, you may see this error message 
 ```
