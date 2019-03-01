@@ -15,7 +15,8 @@ Let's find out what the issue is. Use SSH on the Linux where your Kubernetes is 
 kubectl get pods | grep "qsefe-edge-auth"
 ```
 This should return one row like this
- * qsefe-edge-auth-xxxxxxxxxx-xxxxx                                  2/2     Running   0          12h
+   qsefe-edge-auth-xxxxxxxxxx-xxxxx                                  2/2     Running   0          12h
+
 Now you know the exact instance id which we will copy/paste in the next command
 
  2) Retrieve the log of the container
