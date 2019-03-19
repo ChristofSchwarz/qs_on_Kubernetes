@@ -1,3 +1,4 @@
+echo Find out pod names ...
 collections=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}'|grep "collections")
 dataprep=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}'|grep "data-prep")
 edgeauth=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}'|grep "edge-auth")
