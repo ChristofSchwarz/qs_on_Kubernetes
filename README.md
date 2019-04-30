@@ -7,9 +7,9 @@ The attached .qvf app connects to the Kubernetes API to read the name of the pod
 Currently I import those logs: engine, edge-auth
 
  To enable in your cluster with this command
-^^^
+```
 kubectl proxy --address='$(vHost)' --port=$(vPort) --accept-hosts='^$(vHost)$'
-^^^
+```
 
 The hostname, port must also be set in the Load Script of the app (page a).
 
