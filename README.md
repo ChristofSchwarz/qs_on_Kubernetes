@@ -4,7 +4,8 @@ The attached <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/m
  - computes the actual deeplink to the log of the pod
  - imports some of the logs directly into the app
 
-Current version: 0.12
+Current version: __0.12__
+
 Currently I import those logs: engine, edge-auth
 
  To enable the Kubernetes API in your cluster with this command
