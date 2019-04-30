@@ -4,14 +4,17 @@ The attached <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/m
  - computes the actual deeplink to the log of the pod
  - imports some of the logs directly into the app
 
+Current version: 0.12
 Currently I import those logs: engine, edge-auth
 
- To enable in your cluster with this command
+ To enable the Kubernetes API in your cluster with this command
 ```
 kubectl proxy --address='ip.of.the.host' --port=8001 --accept-hosts='browser.url.of.k8s'
 ```
 
-The hostname, port must also be set in the Load Script of the app (page a).
+ * The hostname, port must also be set in the Load Script of the app (page Main).
+ * If the REST connector configuration is missing after import, just create a new "GET" Rest Connection to any url for example https://jsonplaceholder.typicode.com/todos/1 , no authentication. Correct the statement on page "Main" in the script where it reads LIB CONNECT TO 'your_new_REST_conn';
+
 
 ![alttext](https://github.com/ChristofSchwarz/pics/raw/master/k8slog1.png "screenshot")
 
