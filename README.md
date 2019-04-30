@@ -13,10 +13,10 @@ kubectl proxy --address='$(vHost)' --port=$(vPort) --accept-hosts='^$(vHost)$'
 
 The hostname, port must also be set in the Load Script of the app (page a).
 
-\!\[alttext\](https://github.com/ChristofSchwarz/pics/raw/master/k8slog1.png "screenshot")
+![alttext\](https://github.com/ChristofSchwarz/pics/raw/master/k8slog1.png "screenshot")
 
 More and more log tables will be added, like the below
 
-\!\[alttext\](https://github.com/ChristofSchwarz/pics/raw/master/k8slog2.png "screenshot")
+![alttext\](https://github.com/ChristofSchwarz/pics/raw/master/k8slog2.png "screenshot")
 
 
