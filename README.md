@@ -12,6 +12,10 @@ Currently I import those logs: engine, edge-auth
 ```
 kubectl proxy --address='ip.of.the.host' --port=8001 --accept-hosts='browser.url.of.k8s'
 ```
+Hint: if you dont know the ip-address under which the port can be accessed, type the below. It is one of the shown IPs.
+```
+ifconfig | grep Bcast
+```
 
  * The hostname, port must also be set in the Load Script of the app (page Main).
  * If the REST connector configuration is missing after import, just create a new "GET" Rest Connection to any url for example https://jsonplaceholder.typicode.com/todos/1 , no authentication. Correct the statement on page "Main" in the script where it reads LIB CONNECT TO 'your_new_REST_conn';
