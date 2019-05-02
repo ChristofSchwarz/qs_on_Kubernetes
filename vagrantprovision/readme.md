@@ -30,4 +30,4 @@ vagrant destroy
 
  ## Configuration
 
-You can see <a href="/ChristofSchwarz/qs_on_Kubernetes/blob/master/vagrantprovision/Vagrantfile>here the settings</a> for this virtual machine. It uses Ubuntu 16.04, 6 GB or RAM, 2 processors, and syncs the relative folder "/files" within the VM as "/vagrant/files" folder. You will find the config files (.yaml) there.
+You can see <a href="/ChristofSchwarz/qs_on_Kubernetes/blob/master/vagrantprovision/Vagrantfile">here the settings</a> for this virtual machine. It uses Ubuntu 16.04, 6 GB or RAM, 2 processors, and syncs the relative folder "/files" within the VM as "/vagrant/files" folder. You will find the config files (.yaml) there.
