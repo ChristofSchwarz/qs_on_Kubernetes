@@ -15,4 +15,4 @@ helm repo add qlik-edge https://qlik.bintray.com/edge
 helm install -n qsek8s-init qlik-stable/qliksense-init
 
 # install qlik sense enterprise on kubernetes
-helm install -n qsek8s qlik-stable/qliksense -f /vagrant/files/qliksense.yaml 
+helm install -n qlik qlik-stable/qliksense -f /vagrant/files/qliksense.yaml 
