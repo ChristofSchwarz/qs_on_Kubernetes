@@ -1,0 +1,67 @@
+# minikube
+elastic-infra:
+  nginx-ingress:
+    controller:
+      service:
+        type: NodePort
+        nodePorts:
+          https: 32443
+      extraArgs.report-node-internal-ip-address: ""
+      default-ssl-certificate: default/elastic-infra-elastic-infra-tls-secret
+
+hub:
+  ingress:
+    annotations:
+      nginx.ingress.kubernetes.io/auth-signin: https://$host:32443/login?returnto=$request_uri
+
+management-console:
+  ingress:
+    annotations:
+      nginx.ingress.kubernetes.io/auth-signin: https://$host:32443/login?returnto=$request_uri
+
+edge-auth:
+  oidc:
+    redirectUri: https://elastic.example:32443/login/callback
+    enabled: true
+
+#storage
+mongodb:
+  uri: mongodb://qlik:Qlik1234@qmidb-mongodb.default.svc.cluster.local:27017/qsefe
+
+qix-datafiles:
+  persistence:
+    accessMode: ReadWriteMany
+    enabled: true
+    existingClaim: pvc-qse
+redis:
+  persistence:
+    accessMode: ReadWriteMany
+    enabled: true
+    existingClaim: pvc-qse
+reporting:
+  persistence:
+    accessMode: ReadWriteMany
+    enabled: true
+    existingClaim: pvc-qse
+resource-library:
+  persistence:
+    accessMode: ReadWriteMany
+    enabled: true
+    existingClaim: pvc-qse
+temporary-contents:
+  persistence:
+    accessMode: ReadWriteMany
+    enabled: true
+    existingClaim: pvc-qse
+engine:
+  acceptEULA: "yes"
+  persistence:
+    accessMode: ReadWriteMany
+    enabled: true
+    existingClaim: pvc-qse
+dcaas:
+  dcaas-redis:
+    persistence:
+      accessMode: ReadWriteMany
+      enabled: true
+      existingClaim: pvc-qse
