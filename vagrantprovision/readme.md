@@ -7,7 +7,7 @@
 You need to install 
 
  - Oracle VirtualBox 6.X or later from https://www.virtualbox.org/
- - Vagrant 2.2 or later from https://www.vagrantup.com/ (Note if prompted where to install leave the default C:\HarshiCorp !)
+ - Vagrant 2.2 or later from https://www.vagrantup.com/ <br/>(Note if prompted where to install leave the default C:\HarshiCorp !)
  
  After you downloaded (and unzipped) this git, open a Command Prompt and navigate to the vagrantprovision folder.
  Follow those vagrant commands. We start based on a Ubuntu Xenial base box and then provision what is stated in the "Vagrantfile" 
