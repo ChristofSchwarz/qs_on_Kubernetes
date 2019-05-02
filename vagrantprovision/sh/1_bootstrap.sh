@@ -1,4 +1,4 @@
-echo 'executing "bootstrap.sh"'
+echo 'executing "1_bootstrap.sh"'
 echo 'Updating Ubuntu'
 sudo apt-get -qq -y update
 
