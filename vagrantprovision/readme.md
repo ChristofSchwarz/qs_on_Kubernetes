@@ -15,6 +15,8 @@ wait 1 hour or so for all the packages to deploy. To get a terminal window type
 ```
 vagrant ssh
 ```
+Type "exit" to get back from bash of the Ubuntu into your host system prompt.
+
 If you want to stop and remove the VM properly (also if you want to restart the provisioning process), type
 ```
 vagrant destroy
