@@ -31,3 +31,9 @@ vagrant destroy
  ## Configuration
 
 You can see <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/vagrantprovision/Vagrantfile">here the settings</a> for this virtual machine. It uses Ubuntu 16.04, 6 GB or RAM, 2 processors, and syncs the relative folder "/files" within the VM as "/vagrant/files" folder. You will find the config files (.yaml) there.
+
+The scripts which will be processed right after the first boot of the machine are found in <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/tree/master/vagrantprovision/sh">subfolder sh</a>. They install NFS, Docker, Docker Machine, Minikube, kubeadm, kubectl, helm.
+
+You will have a blank but working minikube. The essential parts to install a storageClass, a PVC, NFS-Container, MongoDB, Qlik Sense init and Qlik Sense are found in <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/vagrantprovision/sh/4_qlik.sh">file 4_qlik.sh</a> which will not automatically be started. 
+
+Enjoy doing it step by step yourself to understand whats done, or just execute the .sh file
