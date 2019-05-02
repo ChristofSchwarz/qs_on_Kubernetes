@@ -10,7 +10,7 @@ Currently I import those logs: engine, edge-auth
 
  To enable the Kubernetes API in your cluster with this command
 ```
-kubectl proxy --address='ip.of.the.host' --port=8001 --accept-hosts='browser.url.of.k8s'
+kubectl proxy --address='ip.of.the.host' --port=8001 --accept-hosts='^*$'
 ```
 Hint: if you dont know the ip-address under which the port can be accessed, type the below. It is one of the shown IPs.
 ```
