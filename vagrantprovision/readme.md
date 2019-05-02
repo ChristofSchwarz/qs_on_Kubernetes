@@ -30,9 +30,14 @@ vagrant destroy
 
  ## Configuration
 
-You can see <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/vagrantprovision/Vagrantfile">here the settings</a> for this virtual machine. It uses Ubuntu 16.04, 6 GB or RAM, 2 processors, and syncs the relative folder "/files" within the VM as "/vagrant/files" folder. You will find the config files (.yaml) there.
+You can see <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/vagrantprovision/Vagrantfile">here the settings</a> for this virtual machine. It uses 
+ * Ubuntu 16.04
+ * 6 GB RAM
+ * 2 processors
+ * syncs the relative folder "/files" within the VM as "/vagrant/files" folder (You will find the .yaml config files there) 
+ * sets root user to __vagrant__ password __vagrant__
 
-The scripts which will be processed right after the first boot of the machine are found in <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/tree/master/vagrantprovision/sh">subfolder sh</a>. They install NFS, Docker, Docker Machine, Minikube, kubeadm, kubectl, helm.
+The scripts which will be processed right after the first boot of the machine are found in <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/tree/master/vagrantprovision/sh">subfolder 'sh'</a>. They install NFS, Docker, Docker Machine, Minikube, kubeadm, kubectl, helm.
 
 You will have a blank but working minikube. The essential parts to install a storageClass, a PVC, NFS-Container, MongoDB, Qlik Sense init and Qlik Sense are found in <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/vagrantprovision/sh/4_qlik.sh">file 4_qlik.sh</a> which will not automatically be started. 
 
