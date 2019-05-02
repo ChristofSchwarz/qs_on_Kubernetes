@@ -2,7 +2,7 @@
 helm install -n nfs stable/nfs-client-provisioner -f /vagrant/files/storageClass.yaml
 
 #Create Persistent Volume Claims
-kubectl apply -f /vagrant/files/qsefe/pvc.yaml
+kubectl apply -f /vagrant/files/pvc.yaml
 
 #Install Mongo
 helm install --name qlikmongo -f /vagrant/files/qsefe/mongo-helm.yaml stable/mongodb
