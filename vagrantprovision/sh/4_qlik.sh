@@ -5,7 +5,7 @@ helm install -n nfs stable/nfs-client-provisioner -f /vagrant/files/storageClass
 kubectl apply -f /vagrant/files/pvc.yaml
 
 #Install Mongo
-helm install --name qlikmongo -f /vagrant/files/qsefe/mongo-helm.yaml stable/mongodb
+helm install -n mongo -f /vagrant/files/qsefe/mongo-helm.yaml stable/mongodb
 
 #Install qliksense from stable repo
 helm repo add qlik-stable https://qlik.bintray.com/stable
