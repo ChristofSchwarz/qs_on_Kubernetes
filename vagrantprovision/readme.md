@@ -2,6 +2,8 @@
  
  This uses the free software Vagrant and VirtualBox to provision a Virtual Machine and installs Minikube (a non-production single-node Kubernetes) in a way to allow Qlik Sense Enterprise on Kubernetes to run on top of it.
  
+ ## How to provision 
+
 You need to install 
 
  - Oracle VirtualBox 6.X or later from https://www.virtualbox.org/
@@ -26,3 +28,6 @@ If you want to stop and remove the VM properly (also if you want to restart the 
 vagrant destroy
 ```
 
+ ## Configuration
+
+You can see <a href="/ChristofSchwarz/qs_on_Kubernetes/blob/master/vagrantprovision/Vagrantfile>here the settings</a> for this virtual machine. It uses Ubuntu 16.04, 6 GB or RAM, 2 processors, and syncs the relative folder "/files" within the VM as "/vagrant/files" folder. You will find the config files (.yaml) there.
