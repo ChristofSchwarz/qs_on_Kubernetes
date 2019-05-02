@@ -8,10 +8,15 @@ You need to install
 
  - Oracle VirtualBox 6.X or later from https://www.virtualbox.org/
  - Vagrant 2.2 or later from https://www.vagrantup.com/ <br/>(Note if prompted where to install leave the default C:\HarshiCorp !)
- 
- After you downloaded (and unzipped) this git, open a Command Prompt and navigate to the vagrantprovision folder.
- Follow those vagrant commands. We start based on a Ubuntu Xenial base box and then provision what is stated in the "Vagrantfile" 
- file and the /sh subfolder
+
+For simplicity reasons, this installation of QSEonK8s will use the built-in user authentication (no 3rd-party Identity Provider). 
+You must access the portal using https://elastic.example:32443 therefore add this (or update) your hosts file found in c:\windows\System32\drivers\etc with this entry:
+```
+192.168.56.234 elastic.example
+```
+After you downloaded (and unzipped) this git, open a Command Prompt and navigate to the vagrantprovision folder.
+Follow those vagrant commands. We start based on a Ubuntu Xenial base box and then provision what is stated in the "Vagrantfile" 
+file and the /sh subfolder
 ``` 
 cd .\vagrantprovision
 vagrant box add "bento/ubuntu-16.04"
@@ -45,5 +50,19 @@ If you do it first time, I remcommend to copy/paste and try to understand every 
 ```
 bash /vagrant/files/4_qlik.sh
 ```
+ ## First Time Login, Enter License
+ 
+Once all pods are running (check with: kubectl get pods) you can navigate your browser to https://elastic.example:32443/console . If everything is correct you will be redirected to port :32123 for login. Choose one of the users below. Remember: the first one to log in to a fresh installation will be site administrator.
+  
+ * harley@qlik.example, password "Password1!"
+ * barb@qlik.example, password "Password1!"
+ * sim@qlik.example, password "Password1!"	
 
 Enjoy QSEonK8s
+
+ ## Known Issues
+ 
+ - The first time you try to enter the console on https://elastic.example:32443/console the browser gets redirected to https://elastic.example/console/ and fails. -> Enter the port :32443 again and it will work
+ - This configuration has issues accessing the scheduled tasks (https://elastic.example:32443/console/scheduler/)
+ - Logout returns "OK" but doesn't remove the cookie. The session is still alive. Use Incognito Mode or delete the Cookie in the Developer tools of your browser.
+
