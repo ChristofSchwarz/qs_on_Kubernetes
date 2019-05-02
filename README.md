@@ -1,7 +1,7 @@
 # Qlik Sense Enterprise on Kubernetes
 
 The attached <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/QSEonK8s%20Logs.qvf?raw=true">.qvf app</a> connects to the Kubernetes API to read the name of the pods and 
- - computes the actual deeplink to the log of the pod
+ - computes the actual deeplink to the log of the container(s) in the pod
  - imports some of the logs directly into the app
 
 Current version: __0.12__
