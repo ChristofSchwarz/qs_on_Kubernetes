@@ -9,7 +9,7 @@ cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
 deb http://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 apt-get update -y -qq
-apt-get install -y kubectl kubeadm kubelet > /dev/null 2>&1
+apt-get install -y kubectl kubeadm kubelet 
 
 sudo curl -s -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && sudo chmod +x minikube && sudo mv minikube /usr/local/bin/
  
