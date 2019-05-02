@@ -46,7 +46,7 @@ The scripts which will be processed right after the first boot of the machine ar
 
 You will have a blank but working minikube. The essential parts to install a storageClass, a PVC, NFS-Container, MongoDB, Qlik Sense init and Qlik Sense are found in <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/vagrantprovision/sh/4_qlik.sh">file 4_qlik.sh</a> which will not automatically be started. 
 
-If you do it first time, I remcommend to copy/paste and try to understand every line of this script to understand whats done. If you want to shortcut, execute the .sh file with 
+If you do it first time, I recommend to copy/paste every line of 4_qlik.sh one by one and try to understand what it does. If you want to shortcut, execute the .sh file with 
 ```
 bash /vagrant/files/4_qlik.sh
 ```
