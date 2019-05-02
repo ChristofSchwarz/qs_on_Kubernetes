@@ -58,6 +58,10 @@ Once all pods are running (check with: kubectl get pods) you can navigate your b
  * barb@qlik.example, password "Password1!"
  * sim@qlik.example, password "Password1!"	
 
+Next you will get back to https://elastic.example:32443/console where you'll have a box to enter the site license (a JWT token you got from your Qlik representative). Once applied, you may see "unauthorized" and may have to re-login. That is only once after the site license has been set. 
+
+https://elastic.example:32443/explore will show the new hub. You can create or upload apps there.
+
 Enjoy QSEonK8s
 
  ## Known Issues
