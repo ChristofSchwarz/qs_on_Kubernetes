@@ -1,4 +1,5 @@
 echo 'executing "3_minikube.sh"'
+# this will install minikube Kubernetes and Helm
 
 sudo swapoff -a
 
@@ -56,4 +57,3 @@ curl -s https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get > g
 chmod 700 get_helm.sh
 ./get_helm.sh
 
-helm init --wait --upgrade
