@@ -19,7 +19,6 @@ Follow those vagrant commands. We start based on a Ubuntu Xenial base box and th
 file and the /sh subfolder
 ``` 
 cd .\vagrantprovision
-vagrant box add "bento/ubuntu-16.04"
 vagrant up
 ```
 wait 1 hour or so for all the packages to deploy. To get a terminal window type
