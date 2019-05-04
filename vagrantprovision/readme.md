@@ -7,7 +7,7 @@
 You need to install 
 
  - Oracle VirtualBox 6.X or later from https://www.virtualbox.org/
- - Vagrant 2.2 or later from https://www.vagrantup.com/ <br/>(Note if prompted where to install leave the default C:\HarshiCorp !)
+ - Vagrant 2.2 or later from https://www.vagrantup.com/ <br/>(Note if prompted where to install leave the default C:\HarshiCorp\Vagrant to avoid issues later !)
 
 For simplicity reasons, this installation of QSEonK8s will use the built-in user authentication (no 3rd-party Identity Provider). 
 You must access the portal using https://elastic.example:32443 therefore add this (or update) your hosts file found in c:\windows\System32\drivers\etc with this entry:
