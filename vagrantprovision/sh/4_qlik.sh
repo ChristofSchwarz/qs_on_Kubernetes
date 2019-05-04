@@ -1,3 +1,8 @@
+#Initialize Helm Tiller pod, upgrade and update the repos
+helm init
+helm init --wait --upgrade
+helm repo update
+
 #Install storageClass on NFS provider
 helm install -n nfs stable/nfs-client-provisioner -f /vagrant/files/storageClass.yaml
 
