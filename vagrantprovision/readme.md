@@ -4,7 +4,8 @@
  
  ## How to provision 
 
-<img src="https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg" /> Video
+<a href="https://www.youtube.com/watch?v=dhQowB_Q9xU"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/200px-YouTube_Logo_2017.svg.png" /> Video where I demonstrate the setup in 8 minutes and then walk through the new console and hub</a>
+
 You need to install 
 
  - A license from Qlik that is enabled for Multi-Cloud (the early name of Qlik Sense Enterprise for Kubernetes)
