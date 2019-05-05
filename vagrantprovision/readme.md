@@ -1,11 +1,13 @@
  # Installing Qlik Sense Enterprise on Minikube
  
- This uses the free software Vagrant and VirtualBox to provision a Virtual Machine and installs Minikube (a non-production single-node Kubernetes) in a way to allow Qlik Sense Enterprise on Kubernetes to run on top of it.
+ This uses the free software Vagrant and VirtualBox to provision a Virtual Machine and installs Minikube (a non-production single-node Kubernetes) in a way to allow Qlik Sense Enterprise on Kubernetes to run on top of it. 
  
  ## How to provision 
 
+<img src="https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg" /> Video
 You need to install 
 
+ - A license from Qlik that is enabled for Multi-Cloud (the early name of Qlik Sense Enterprise for Kubernetes)
  - Oracle VirtualBox 6.X or later from https://www.virtualbox.org/
  - Vagrant 2.2 or later from https://www.vagrantup.com/ <br/>(Note if prompted where to install leave the default C:\HarshiCorp\Vagrant to avoid issues later !)
 
