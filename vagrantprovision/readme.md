@@ -9,7 +9,7 @@
 You need to install 
 
  - A license from Qlik that is enabled for Multi-Cloud (the early name of Qlik Sense Enterprise for Kubernetes)
- - Oracle VirtualBox 5.2 or later from https://www.virtualbox.org/
+ - Oracle VirtualBox 5.2 or later from https://www.virtualbox.org/ (turn Hyper-V off)
  - Vagrant 2.2 or later from https://www.vagrantup.com/ <br/>(Note if prompted where to install leave the default C:\HarshiCorp\Vagrant to avoid issues later !)
 
 For simplicity reasons, this installation of QSEonK8s will use the built-in user authentication (no 3rd-party Identity Provider). 
@@ -50,7 +50,7 @@ You will have a blank but working minikube. The essential parts to install a sto
 
 If you do it first time, I recommend to copy/paste every line of 4_qlik.sh one by one and try to understand what it does. If you want to shortcut, execute the .sh file with 
 ```
-bash /vagrant/files/4_qlik.sh
+bash /vagrant/sh/4_qlik.sh
 ```
  ## First Time Login, Enter License
  
