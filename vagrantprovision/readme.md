@@ -2,7 +2,7 @@
  
  This uses the free software Vagrant and VirtualBox to provision a Virtual Machine and installs Minikube (a non-production single-node Kubernetes) in a way to allow Qlik Sense Enterprise on Kubernetes to run on top of it. 
  
-<a href="https://www.youtube.com/watch?v=dhQowB_Q9xU"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/200px-YouTube_Logo_2017.svg.png" width="100"/> Video to demonstrate the setup in 8 min, then show the new console and hub</a>
+<a href="https://www.youtube.com/watch?v=dhQowB_Q9xU"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/200px-YouTube_Logo_2017.svg.png" width="100"/> &nbsp; Video to demonstrate the setup in 8 min, then show the new console and hub</a>
 
  ## How to provision 
 
