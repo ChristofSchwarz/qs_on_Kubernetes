@@ -9,7 +9,7 @@
 You need to install 
 
  - A license from Qlik that is enabled for Multi-Cloud (the early name of Qlik Sense Enterprise for Kubernetes)
- - Oracle VirtualBox 6.X or later from https://www.virtualbox.org/
+ - Oracle VirtualBox 5.2 or later from https://www.virtualbox.org/
  - Vagrant 2.2 or later from https://www.vagrantup.com/ <br/>(Note if prompted where to install leave the default C:\HarshiCorp\Vagrant to avoid issues later !)
 
 For simplicity reasons, this installation of QSEonK8s will use the built-in user authentication (no 3rd-party Identity Provider). 
