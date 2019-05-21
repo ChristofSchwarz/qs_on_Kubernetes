@@ -55,5 +55,6 @@ sudo chgrp -R vagrant /home/vagrant/.minikube
 echo 'Getting Helm'
 curl -s https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get > get_helm.sh
 chmod 700 get_helm.sh
-./get_helm.sh
+# changed on 21-05-2019: helm version 2.14 doesn't work, getting an older version
+./get_helm.sh --version v2.13.1
 
