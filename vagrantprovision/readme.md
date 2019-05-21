@@ -71,4 +71,5 @@ Enjoy QSEonK8s
  - The first time you try to enter the console on https://elastic.example:32443/console the browser gets redirected to https://elastic.example/console/ and fails. -> Enter the port :32443 again and it will work
  - This configuration has issues accessing the scheduled tasks (https://elastic.example:32443/console/scheduler/)
  - Logout returns "OK" but doesn't remove the cookie. The session is still alive. Use Incognito Mode or delete the Cookie in the Developer tools of your browser.
+ - the updated helm as of May 15 2019 doesn't work with this setup. I <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/vagrantprovision/sh/3_minikube.sh">set the version to be pulled to v2.13.1</a>.
 
