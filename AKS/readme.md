@@ -6,6 +6,6 @@ helm upgrade [RELEASE] [REPO]/qliksense -f qseok1.yaml
 helm upgrade qliksense qlik-stable/qliksense -f qseok.yaml
 ```
 ## qseok1.yaml
-built-in MongoDB (test only), built-in OIDC listening to https://elastic.example
+built-in MongoDB (test only), built-in OIDC listening to https://elastic.example (users need to set their hosts. file to reach the cluster)
 ## qseok2.yaml
-built-in MongoDB (test only), built-in OIDC listening to whatever you like
+built-in MongoDB (test only), built-in OIDC listening to whatever you like 
