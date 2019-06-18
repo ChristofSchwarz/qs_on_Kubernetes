@@ -1,0 +1,21 @@
+## Use for Azure AKS deployments
+## simpliest settings, built-in MongoDB, built-in OIDC
+
+devMode:
+  ## uses built-in MongoDB pod (no persistence!)
+  enabled: true  
+
+engine:
+  acceptEULA: "yes"
+
+global:
+  persistence:
+    storageClass: "azurefile" 
+    
+edge-auth:
+  oidc:
+    ## uses built-in simple-oicd-provider instead of identity provider
+    enabled: true  
+
+      # The built-in identity provider only listens to https://elastic.example 
+      # so update your "hosts" file to map elstic.example to the public IP.
