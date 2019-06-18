@@ -1,0 +1,58 @@
+## Use for Azure AKS deployments
+## Use Built-in MongoDB
+## Use Simple-OIDC-Provider but under any browser-address (search/replace ip 52.157.149.156)
+
+devMode:
+  ## uses built-in MongoDB pod (no persistence!)
+  enabled: true  
+
+engine:
+  acceptEULA: "yes"
+
+global:
+  persistence:
+    ## Storageclass azurefile must exist in your K8s cluster
+    storageClass: "azurefile" 
+
+edge-auth:
+  oidc:
+    enabled: true
+    
+    ## oidc image registry where the repository is pulled from.
+    ## `global.imageRegistry` if set override this value.    
+    registry: qlik
+    
+    ## oidc image    
+    repository: simple-oidc-provider
+    
+    ## oidc image version.    
+    tag: 0.1.2
+
+    ## default host and oidc port
+    port: 32123
+    defaultHost: 52.157.149.156
+    
+    ## Override default with a custom whitelist for where the OIDC will allow redirect to    
+    redirectUri: https://52.157.149.156/login/callback
+
+## identity-providers contains the configurations for the identity-providers sub-chart
+identity-providers:
+  secrets:
+    idpConfigs:
+      - issuerConfig:
+          authorization_endpoint: "http://52.157.149.156:32123/auth"
+          issuer: "http://simple-oidc-provider"
+          jwks_uri: "http://52.157.149.156:32123/certs"
+          token_endpoint: "http://52.157.149.156:32123/token"
+          userinfo_endpoint: "http://52.157.149.156:32123/me"
+          introspection_endpoint: "http://52.157.149.156:32123/token/introspection"
+          end_session_endpoint: "http://52.157.149.156:32123/session/end"
+        clientId: "foo"
+        clientSecret: "bar"
+        postLogoutRedirectUri: "http://52.157.149.156"
+        realm: "simple"
+        hostname: "52.157.149.156"
+        claimsMapping:
+          sub: ["sub", "client_id"]
+          name: "name"
+
