@@ -54,11 +54,12 @@ bash /vagrant/sh/4_qlik.sh
 ```
  ## First Time Login, Enter License
  
-Once all pods are running (check with: kubectl get pods) you can navigate your browser to https://elastic.example:32443/console . If everything is correct you will be redirected to port :32123 for login. Choose one of the users below. Remember: the first one to log in to a fresh installation will be site administrator.
+Once all pods are running (check with: kubectl get pods) you can navigate your browser to https://elastic.example:32443/console . If everything is correct you will be redirected to port :32123 for login. Choose one of the users below. Remember: the first one to log in to a fresh installation will be site administrator (TenentAdmin). 
   
  * harley@qlik.example, password "Password1!"
  * barb@qlik.example, password "Password1!"
  * sim@qlik.example, password "Password1!"	
+ * ... 7 more users, see https://support.qlik.com/articles/000076585
 
 Next you will get back to https://elastic.example:32443/console where you'll have a box to enter the site license (a JWT token you got from your Qlik representative). Once applied, you may see "unauthorized" and may have to re-login. That is only once after the site license has been set. 
 
