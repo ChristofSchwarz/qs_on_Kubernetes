@@ -1,5 +1,7 @@
-#create PVC for MongoDB
+echo 'execute "5_mongo.sh"'
+
+echo 'Creating PVC for MongoDB'
 kubectl apply -f /vagrant/files/pvc_mongo.yaml
 
-#Install MongoDB
+echo 'Installing MongoDB chart'
 helm install -n mongo stable/mongodb -f /vagrant/files/mongo.yaml 
