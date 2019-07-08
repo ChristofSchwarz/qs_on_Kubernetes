@@ -1,0 +1,5 @@
+nfs:
+  path: /export/k8s
+  server: 'qliksense-minikube'
+storageClass:
+  name: localnfs
