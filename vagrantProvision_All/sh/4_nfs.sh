@@ -1,4 +1,4 @@
-echo 'executing "4_nsf.sh"'
+echo 'executing "4_nfs.sh"'
 
 echo 'Installing storageClass on NFS provider'
 helm install -n nfs stable/nfs-client-provisioner -f /vagrant/files/storageClass.yaml
