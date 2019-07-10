@@ -62,6 +62,5 @@ chmod 700 get_helm.sh
 helm init
 helm init --wait --upgrade
 helm repo update
-helm init --wait
 
 
