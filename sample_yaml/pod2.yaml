@@ -13,3 +13,9 @@ spec:
     ports: 
     - containerPort: 8074
       name: hellochris-port
+      # the port name (15 chars max) will be used by the service yaml
+      
+# to create this pod type
+# kubectl create -f pod2.yaml
+# To expose the port you need to create a service
+# kubectl create -f service4pod2.yaml
