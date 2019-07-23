@@ -6,7 +6,7 @@ metadata:
     app: hellochristofapp
 spec:
   containers:
-  - name: k8s-hello-christof
+  - name: hellochristof-container
     image: qristof/hello-christof
     ports: 
     - containerPort: 8074
