@@ -11,6 +11,7 @@ spec:
     ports: 
     - containerPort: 8074
 
-# to expose this port you need this command to start a service:
-# kubectl expose pod hellochristofpod --type NodePort --name hellochristofservice
-# then do "kubctl get svc" to get the port number which Kubernetes assigned to it
+# to create this pod type
+# kubectl create -f pod1.yaml
+# To expose the port you need to create a service
+# kubectl create -f service4pod1.yaml
