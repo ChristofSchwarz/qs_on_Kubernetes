@@ -4,6 +4,9 @@ metadata:
   name: hellochristof-deploy
 spec:
   replicas: 2
+  selector:
+    matchLabels:
+      app: hellochristof  
   template:
     metadata:
       name: hellochristof-rcpod
