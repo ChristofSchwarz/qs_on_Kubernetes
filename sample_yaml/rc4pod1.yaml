@@ -1,3 +1,5 @@
+# note ReplicationControllers are outdated, deployment (replica sets) are the new way ...
+
 apiVersion: v1
 kind: ReplicationController
 metadata:
