@@ -3,7 +3,7 @@ kind: ReplicationController
 metadata:
   name: hellochristof-rc
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     app: hellochristof-rcapp
   template:
