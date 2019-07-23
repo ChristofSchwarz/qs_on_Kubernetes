@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hellochristof-deploy
+  name: hellochris-deploy
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: hellochristofapp  
+      app: hellochris-app1  
   template:
     metadata:
-      name: hellochristof-rcpod
+      name: hellochris-rcpod
       labels:
-        app: hellochristofapp
+        app: hellochris-app1
     spec:
       containers:
-      - name: hellochristof-container
+      - name: hellochris-container
         image: qristof/hello-christof
         ports: 
         - containerPort: 8074
