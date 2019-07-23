@@ -11,7 +11,7 @@ spec:
     metadata:
       name: hellochristof-rcpod
       labels:
-        app: hellochristof
+        app: hellochristofapp
     spec:
       containers:
       - name: hellochristof-container
