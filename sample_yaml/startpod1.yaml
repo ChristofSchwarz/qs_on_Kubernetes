@@ -10,3 +10,6 @@ spec:
     image: qristof/hello-christof
     ports: 
     - containerPort: 8074
+
+# to expose this port you need this command to start a service:
+# kubectl expose pod hellochristofpod --type NodePort --name hellochristofservice
