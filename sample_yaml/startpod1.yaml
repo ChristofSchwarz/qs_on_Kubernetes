@@ -13,3 +13,4 @@ spec:
 
 # to expose this port you need this command to start a service:
 # kubectl expose pod hellochristofpod --type NodePort --name hellochristofservice
+# then do "kubctl get svc" to get the port number which Kubernetes assigned to it
