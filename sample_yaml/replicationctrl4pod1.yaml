@@ -4,13 +4,13 @@ metadata:
   name: hellochristof-rc
 spec:
   replicas: 3
-  #selector:
-  #  app: hellochristofapp
+  selector:
+    app: hellochristof-rcapp
   template:
     metadata:
-      name: hellochristofpod
+      name: hellochristof-rcpod
       labels:
-        app: hellochristofapp
+        app: hellochristof-rcapp
     spec:
       containers:
       - name: hellochristof-container
