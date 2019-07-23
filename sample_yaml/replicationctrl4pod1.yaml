@@ -4,16 +4,16 @@ metadata:
   name: hellochristof-rc
 spec:
   replicas: 3
-  selector:
-    app: hellochristofapp
+  #selector:
+  #  app: hellochristofapp
   template:
     metadata:
-      name: soaktestrc
+      name: hellochristofpod
       labels:
-        app: soaktestrc
+        app: hellochristofapp
     spec:
       containers:
-      - name: soaktestrc
-        image: nickchase/soaktest
-        ports:
-        - containerPort: 80
+      - name: hellochristof-container
+        image: qristof/hello-christof
+        ports: 
+        - containerPort: 8074
