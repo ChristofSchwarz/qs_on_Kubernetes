@@ -10,6 +10,8 @@ spec:
     image: qristof/hello-christof
     ports: 
     - containerPort: 8074
+      name: hellochristof-port
+      # a name for the port is optional but good for a service to dynamically look it up by name
 
 # to create this pod type
 # kubectl create -f pod1.yaml
