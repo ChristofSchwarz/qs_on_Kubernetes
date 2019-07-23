@@ -4,7 +4,7 @@ metadata:
   name: hellochristofname
   labels:
     app: hellochristofapp
-specs:
+spec:
   containers:
   - name: k8s-hello-christof
     image: qristof/hello-christof
