@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hellochristofname
+  labels:
+    app: hellochristofapp
+specs:
+  containers:
+  - name: k8s-hello-christof
+    image: qristof/hello-christof
+    ports: 
+    - containerPort: 8074
