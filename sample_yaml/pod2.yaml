@@ -1,0 +1,15 @@
+# like pod1.yaml but this time using a name for the port, which can be used in service
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hellochristofpod
+  labels:
+    app: hellochristofapp
+spec:
+  containers:
+  - name: hellochristof-container
+    image: qristof/hello-christof
+    ports: 
+    - containerPort: 8074
+      name: hellochris-port
