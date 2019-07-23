@@ -3,12 +3,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: hellochristofpod
+  name: hellochris-pod2
   labels:
-    app: hellochristofapp
+    app: hellochris-app2
 spec:
   containers:
-  - name: hellochristof-container
+  - name: hellochris-container
     image: qristof/hello-christof
     ports: 
     - containerPort: 8074
