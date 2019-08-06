@@ -1,0 +1,7 @@
+{
+  "name": "hello-christof",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "^4.15.0"
+  }
+}
