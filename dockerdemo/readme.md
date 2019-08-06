@@ -12,7 +12,7 @@ This outputs an id of an image, which you will use in the next command
 ```
 docker run -d -p 8074:8074 {{imageid}}
 ```
--d runs the container "in background" (detached). 
+-d runs the container "in background" (detached). -p exposes the port also to the host
 ```
 curl localhost:8074
 ```
