@@ -20,7 +20,7 @@ You should now see "Hello Christof".
 
 ## Stop the container
 
-First list the containers to get it's id. Search for the one with COMMAND "node app.js" or PORTS "0.0.0.0:8074->8074/tcp" and copy its CONTAINER ID
+First list the containers to get it's id using "docker ps". Search for the one with COMMAND "node app.js" or PORTS "0.0.0.0:8074->8074/tcp" and copy its CONTAINER ID
 ```
 docker ps
 docker kill {{containerId}}
