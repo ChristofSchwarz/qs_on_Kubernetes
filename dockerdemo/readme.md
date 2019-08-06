@@ -1,7 +1,7 @@
 # Minimalistic Dockerized NodeJS app 
 that outputs helloworld on http port 8074
 
-# Test this container
+## Test this container
 
 To test it, use docker build. 
 ```
@@ -18,7 +18,7 @@ curl localhost:8074
 ```
 You should now see "Hello Christof". 
 
-# Stop the container
+## Stop the container
 
 First list the containers to get it's id. Search for the one with COMMAND "node app.js" or PORTS "0.0.0.0:8074->8074/tcp" and copy its CONTAINER ID
 ```
