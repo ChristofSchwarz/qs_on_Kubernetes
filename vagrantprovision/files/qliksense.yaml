@@ -26,7 +26,7 @@ edge-auth:
 
 #storage
 mongodb:
-  uri: mongodb://qlik:Qlik1234@mongo-mongodb.default.svc.cluster.local:27017/qsefe
+  uri: mongodb://qlik:Qlik1234@mongo-mongodb.default.svc.cluster.local:27017/qsefe?ssl=false
 
 qix-datafiles:
   persistence:
