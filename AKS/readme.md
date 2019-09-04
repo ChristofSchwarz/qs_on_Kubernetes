@@ -2,7 +2,7 @@
 
 Different settings files for your scenario. Apply with the following command
 ```
-helm upgrade [RELEASE] [REPO]/qliksense -f qseok1.yaml
+helm upgrade [RELEASE] [REPO]/qliksense -f qseok.yaml
 helm upgrade qliksense qlik-stable/qliksense -f qseok.yaml
 ```
 ## qseok1.yaml
