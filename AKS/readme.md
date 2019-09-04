@@ -11,3 +11,6 @@ helm upgrade qliksense qlik-stable/qliksense -f qseok.yaml
 ## qseok2.yaml
  * built-in MongoDB (test only)
  * built-in OIDC listening to whatever you like 
+## qseok3.yaml
+ * built-in MongoDB (test only)
+ * using Auth0 as IDP (identity provider) 
