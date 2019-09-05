@@ -1,8 +1,0 @@
-devMode:
-  enabled: true
-engine:
-  acceptEULA: "yes"
-  
-global:
-  persistence:
-     storageClass: "azurefile"
