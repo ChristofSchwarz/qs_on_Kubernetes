@@ -57,7 +57,7 @@ az storage account create -g MC_rg-kubernetes_cl-kubernetes_westeurope -n accoun
  * Remember the version of Kubernetes which you installed before and adjust the link below if yours is different than v1.13.10
  * Download kubectl from 
 https://storage.googleapis.com/kubernetes-release/release/v1.10.13/bin/windows/amd64/kubectl.exe into C:\Kubernetes
- * kubectl.exe should now be available in C:\Kubernetes. You may want add C:\Kubernetes to the „PATH“ variable of Windows, so that you can type the kubectl command from within other folder in Powershell or Cmd.
+ * kubectl.exe should now be available in C:\Kubernetes. You may want add C:\Kubernetes to the „PATH“ variable of Windows, so that you can type the kubectl command from within other folder in Powershell or Cmd. If not, you will have to use ".\kubectl" instead of "kubectl" in all the following commands in order to call the local kubectl.exe from the current folder
 
 See if your context of kubectl is our (new) cluster
 ```
@@ -80,14 +80,27 @@ Bind the cluster role
 ```
 kubectl create clusterrolebinding system:azure-cloud-provider --clusterrole=system:azure-cloud-provider --serviceaccount=kube-system:persistent-volume-binder
 ```
-Create a storage-class from this <a href="https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/AKS/storageclass.yaml" yaml-file> using this command
+Create a storage-class from this <a href="https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/AKS/storageclass.yaml">yaml-file</a> using this command
 ```
 kubectl apply -f https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/AKS/storageclass.yaml
 ```
 (Alternatively, you can also download the file and use it in the -f parameter locally)
 
 ## Installing and configuring helm
-  
+
+ * Open download page: https://github.com/helm/helm/releases
+ * Download one of the latest stable releases, the link is found when you scroll down, for example https://get.helm.sh/helm-v2.14.3-windows-amd64.zip
+ * open the .zip when downloaded and copy helm.exe and tiller.exe into your working folder C:\Kubernetes
+ * you should be able to execute the command "helm" now (if it isn't in your PATH, you will have to use ".\helm" to call the local helm.exe from the current folder)
+You are now done setting up helm, the next steps are to configure it for AKS
+
+Lets install the "tiller pod" in the cluster and upgrade to the latest version
+```
+helm init --upgrade --wait  
+```
+AKS is provisioned with RBAC (Role Based Access Control) enabled. In order for HELM to successfully operate in an RBAC enabled cluster a service account needs to be created:
+
+
 
 ## yaml-Settings for QSEoK on Azure Kubernetes Services (AKS)
 
