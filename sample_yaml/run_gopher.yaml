@@ -9,9 +9,9 @@ spec:
   - name: gopherciser-container
     image: qristof/gopherimg
     ports: 
-    - containerPort: 8074
+    - containerPort: 9874
 
 # to create this pod type
-# kubectl create -f pod1.yaml
+# kubectl create -f https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/sample_yaml/run_gopher.yaml
 # To expose the port you need to create a service
 # kubectl create -f service4pod1.yaml
