@@ -8,5 +8,6 @@ global:
      storageClass: "azurefile"
 
 devMode:
-  enabled: true  ## uses built-in Mongo-DB, not for production use
+  ## uses bundled MongoDB CE, not for production use
+  enabled: true  
  
