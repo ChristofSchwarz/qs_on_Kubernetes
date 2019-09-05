@@ -147,7 +147,7 @@ It will list the EXTERNAL-IP of type Load-Balancer. You can navigate to this wit
 
 We will shift gears now and download another <a href="https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/AKS/qliksense3.yaml">yaml file</a> to your working folder. This configuration which tell QSEoK 
  - to use <a href="https://auth0.com/">Auth0</a> (a cloud idp, free accounts are available) 
- - tell the MongoDB where to persist (otherwise if qlik-mongodb gets killed, all site configuration is lost with it.
+ - tell the MongoDB to persist on azurefile storageclass (otherwise if qlik-mongodb gets killed, all site configuration is lost with it. (Note this built-in MongoDB is not meant for production use)
  - Important! Edit the downloaded file with a text-editor (notepad) and replace the ip address to the one you have got (section identity-providers)
  
 Since we installed the chart "qlik" already, this time it is "helm upgrade", not "helm install". The 
