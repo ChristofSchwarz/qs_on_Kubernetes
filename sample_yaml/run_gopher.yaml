@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: gopherciser
+  labels:
+    app: gopherciser
+spec:
+  containers:
+  - name: gopherciser-container
+    image: qristof/gopherimg
+    ports: 
+    - containerPort: 8074
+
+# to create this pod type
+# kubectl create -f pod1.yaml
+# To expose the port you need to create a service
+# kubectl create -f service4pod1.yaml
