@@ -1,0 +1,9 @@
+devMode:
+  enabled: true  # start built-in Mongo-DB
+  
+engine:
+  acceptEULA: "yes"
+  
+global:
+  persistence:
+     storageClass: "azurefile"
