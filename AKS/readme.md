@@ -155,3 +155,15 @@ Since we installed the chart "qlik" already, this time it is "helm upgrade", not
 helm upgrade qlik qlik-stable/qliksense -f qliksense3.yaml
 ```
 
+## Want to use Kubernetes Dashboard for AKS?
+
+You will have to create a ClusterRoleBinding before the az dashboard can work. I followed the instructions here https://github.com/kubernetes/dashboard/wiki/Access-control#admin-privileges and created this yaml file in this github. Simply do
+```
+kubectl create -f https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/AKS/dashboard-admin.yaml
+``` 
+then run the Kubernetes dashboard with this command
+```
+az aks get-credentials -g rg-kubernetes -n cl-kubernetes
+az aks browse -g rg-kubernetes -n cl-kubernetes
+```
+
