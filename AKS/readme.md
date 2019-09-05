@@ -9,7 +9,7 @@ helm upgrade qliksense qlik-stable/qliksense -f qliksense.yaml
  * just a starting-point, will not work since no identity provider is specified
 ## qliksense2.yaml
  * built-in MongoDB (test only)
- * built-in OIDC listening to https://elastic.example (users need to set their hosts. file to reach the cluster)
+ * built-in OIDC listening to https://elastic.example (users need to set their hosts. file to login to QSEoK)
 ## qliksense3.yaml
  * built-in MongoDB (test only)
  * using Auth0 as IDP (identity provider) 
