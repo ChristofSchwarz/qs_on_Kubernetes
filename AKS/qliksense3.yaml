@@ -1,6 +1,4 @@
-devMode:
-  enabled: true
-  
+
 engine:
   acceptEULA: "yes"
 
@@ -8,8 +6,12 @@ global:
   persistence:
     storageClass: "azurefile"
 
+devMode:
+  ## uses bundled MongoDB CE, not for production use
+  enabled: true
+  
 mongodb: 
-# tell the qlik-mongodb to persist 
+  ## tell the qlik-mongodb to persist 
   persistence:
     enabled: true
     storageClass: "azurefile"  
