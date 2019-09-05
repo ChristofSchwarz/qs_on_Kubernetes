@@ -98,22 +98,60 @@ Lets install the "tiller pod" in the cluster and upgrade to the latest version
 ```
 helm init --upgrade --wait  
 ```
-AKS is provisioned with RBAC (Role Based Access Control) enabled. In order for HELM to successfully operate in an RBAC enabled cluster a service account needs to be created:
-
-
-
-## yaml-Settings for QSEoK on Azure Kubernetes Services (AKS)
-
-Different settings files for your scenario. Apply with the following command
+AKS is provisioned with RBAC (Role Based Access Control) enabled. In order for HELM to successfully operate in an RBAC enabled cluster a service account needs to be created from this <a href="https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/AKS/serviceaccount.yaml">yaml-file</a>
 ```
-helm upgrade [RELEASE] [REPO]/qliksense -f qliksense.yaml
-helm upgrade qliksense qlik-stable/qliksense -f qliksense.yaml
+kubectl create -f https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/AKS/serviceaccount.yaml
 ```
-### qliksense.yaml
- * just a starting-point, will not work since no identity provider is specified
-### qliksense2.yaml
- * built-in MongoDB (test only)
- * built-in OIDC listening to https://elastic.example (users need to set their hosts. file to login to QSEoK)
-### qliksense3.yaml
- * built-in MongoDB (test only)
- * using Auth0 as IDP (identity provider) 
+(Alternatively, you can also download the file and use it in the -f parameter locally)
+
+Tell helm to use the newly created ServiceAccount
+```
+helm init --upgrade --service-account tiller  
+```
+To get a list of all configured repositories from helm use
+```
+helm repo list
+```
+To add Qlik’s repositories to helm use:
+```
+helm repo add qlik-stable https://qlik.bintray.com/stable
+helm repo add qlik-edge https://qlik.bintray.com/edge
+```
+To see which charts are the latest ones in the repos, use
+```
+helm search qlik-stable
+helm search qlik-edge
+```
+or get a list of all available versions
+```
+helm search qlik-stable --versions
+helm search qlik-edge --versions
+```
+## Deploy QSEoK first time
+Use the following helm commands to deploy QSEoK, download this <a href="https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/AKS/qliksense.yaml">qliksense.yaml file</a> from this github into your current folder. The deployment installs a customresourcedefinition first (qliksense-init) and then the qliksense chart. (you can choose below between qlik-stable or qlik-edge repo, just as we added it with "helm repo add" before)
+```
+helm install --name qlik-init qlik-stable/qliksense-init
+helm install --name qlik qlik-stable/qliksense -f qliksense.yaml
+```
+This will take quite some time (min 20 min) to pull about 60 container-images. From time to time check
+```
+kubectl get pods
+```
+and wait until all are running. Don't worry, if some pods are crashing while others are still creating.
+
+Lets find out the IP address of our new QSEoK cluster:
+```
+kubectl get service -l app=nginx-ingress
+```
+It will list the EXTERNAL-IP of type Load-Balancer. You can navigate to this with your browser (https://51.140.243.233), if all has worked out, you will see a certificate warning and then run into an error, because we haven't setup an identity provider yet.
+
+We will shift gears now and download another <a href="https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/AKS/qliksense3.yaml">yaml file</a> to your working folder. This configuration which tell QSEoK to 
+ - use Auth0 (a cloud idp, free accounts are available) 
+ - tell the MongoDB where to persist (otherwise if qlik-mongodb gets killed, all site configuration is lost with it.
+ - Important! Edit the downloaded file with a text-editor (notepad) and replace the ip address to the one you have got (section identity-providers)
+ 
+Since we installed the chart "qlik" already, this time it is "helm upgrade", not "helm install". The 
+```
+helm upgrade qlik qlik-stable/qliksense -f qliksense3.yaml
+```
+
