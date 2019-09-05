@@ -1,12 +1,14 @@
-# This Powershell script will lookup the current pod name for qix-session and edge-auth and delete those
-# (...so that they will get restarted by the deployment object ...)
+# This Powershell will call "kubectl delete pod" for a given list of pods
+# (...typically after deletion they will be restarted by the deployment object ...)
+# Provide the list pipe-separated 
+# Each entry is matched as "pod name >contains< entry", not the exact name
 
-$qix_sessions = kubectl get pod -o=custom-columns=NAME:.metadata.name | Select-String "qix-sessions" | Out-String
-$qix_sessions = $qix_sessions.replace("`n","").replace("`r","") # remove line-breaks
-Write-Host "Restarting pod $qix_sessions"
-kubectl delete pod $qix_sessions
+$podlist = "qix-sessions|edge-auth"  
+Write-Host "Deleting pods" 
+Write-Host $podlist.replace("|","`n")
+$getpods = kubectl get pod -o=custom-columns=n:.metadata.name | Select-String "(?:$podlist)" 
+ForEach ($pod in ($getpods -split ("`r") -split ("`n")))
+{
+    If ($pod.length -gt 0) { kubectl delete pod $pod }
+}
 
-$edge_auth = kubectl get pod -o=custom-columns=NAME:.metadata.name | Select-String "edge-auth" | Out-String
-$edge_auth = $edge_auth.replace("`n","").replace("`r","")  # remove line-breaks
-Write-Host "Restarting pod $edge_auth"
-kubectl delete pod $edge_auth
