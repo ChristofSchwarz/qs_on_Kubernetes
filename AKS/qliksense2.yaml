@@ -1,0 +1,32 @@
+## Use for Azure AKS deployments
+## simpliest settings, built-in MongoDB, built-in OIDC
+
+devMode:
+  ## uses bundled MongoDB CE, not for production use
+  enabled: true  
+  
+engine:
+  acceptEULA: "yes"
+
+global:
+  persistence:
+    storageClass: "azurefile" 
+
+mongodb: 
+# tell the qlik-mongodb to persist 
+  persistence:
+    enabled: true
+    storageClass: "azurefile"  
+    accessMode: ReadWriteMany
+  securityContext:
+    enabled: true
+    fsGroup: 63400
+    runAsUser: 63400    
+
+edge-auth:
+  oidc:
+    ## uses built-in simple-oicd-provider instead of identity provider
+    enabled: true  
+
+      # The built-in identity provider only listens to https://elastic.example 
+      # so update your "hosts" file to map elstic.example to the public IP.
