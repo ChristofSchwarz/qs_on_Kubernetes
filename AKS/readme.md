@@ -145,8 +145,8 @@ kubectl get service -l app=nginx-ingress
 ```
 It will list the EXTERNAL-IP of type Load-Balancer. You can navigate to this with your browser (https://51.140.243.233), if all has worked out, you will see a certificate warning and then run into an error, because we haven't setup an identity provider yet.
 
-We will shift gears now and download another <a href="https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/AKS/qliksense3.yaml">yaml file</a> to your working folder. This configuration which tell QSEoK to 
- - use Auth0 (a cloud idp, free accounts are available) 
+We will shift gears now and download another <a href="https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/AKS/qliksense3.yaml">yaml file</a> to your working folder. This configuration which tell QSEoK 
+ - to use <a href="https://auth0.com/">Auth0</a> (a cloud idp, free accounts are available) 
  - tell the MongoDB where to persist (otherwise if qlik-mongodb gets killed, all site configuration is lost with it.
  - Important! Edit the downloaded file with a text-editor (notepad) and replace the ip address to the one you have got (section identity-providers)
  
