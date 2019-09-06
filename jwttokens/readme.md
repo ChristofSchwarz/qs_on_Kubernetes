@@ -1,5 +1,8 @@
 # Impersonating into QSEoK using JWT 
 
+### Warning
+This is tested on Qlik Sense Enterprise on Kubernetes Versions June 2019 and Sept 2019, there is no guarantee that this continues to work like that. It is an undocumented feature. 
+
 ### Installing
 Download this folder (node.js, package.json, priv_, pub_key.txt, pub_key.txt). You need npm and node (NodeJs). To install the dependencies, run from the same folder ... 
 ```
