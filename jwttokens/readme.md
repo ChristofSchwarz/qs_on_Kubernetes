@@ -1,1 +1,11 @@
 # Impersonating into QSEoK using JWT 
+
+This node app starts a minimalistic webservice on port 31974 ... it produces a JWT token and signs it with the key file "priv_key.txt" in a format, that QSEoK will accept as a Bearer Token. You will have to provide a few parameters as querystrings like
+
+http://localhost:31974/token?kid=my-key-identifier&id=csw@qlik.com&name=Christof%20Schwarz&groups=["Finance","Everyone"]
+
+It will look something like <a href="https://jwt.io#debugger-io?token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im15LWtleS1pZGVudGlmaWVyIn0.eyJpc3MiOiJodHRwczovL3FsaWsuYXBpLmludGVybmFsIiwiYXVkIjoicWxpay5hcGkiLCJzdWIiOiJjc3dAcWxpay5jb20iLCJncm91cHMiOlsiRmluYW5jZSIsIkV2ZXJ5b25lIl0sIm5hbWUiOiJDaHJpc3RvZiBTY2h3YXJ6IiwiZXhwIjoxNTY3Nzg4NjA0fQ.aHg-Tqy0hKEtJ31dp-yI6gDcyKwk_EwKfy9-82Mn-0GnZrapxkvyPpeBHSWfM58uPF6eqSvMW-L0li5jP2vSdVmgmvUSWHZ7ZmqzvDnrYwdCMGKVnwOo7aKqneJ19QcFf8YTwPQl-NeDnWQr-R2JyKb-oROpj4hI_nOT8Cl-dPnTxNNePa-LTwXbiQquAbPQUPIV6rSdaldumsiLoXno5XuywQVQGudX0D9D_WLNn0kKCQmSXMCkbDi7q2O9aPWS6EQYkP1I2PFX1BMYDgEQxqonhmavI2n73HzuzJFt02WEIhdm9eBAdvxK3O37yMY8K0vDjvm1pPbNsj2-NUVU-aPFFp0Uxa9K7PFg7O9cTeIsJJ_pcXbqKEztMiOBZ4MQj6-88yspPCK2Ycdp2NYORv-Iz9E54UDRXOIqJOCYKWnPMI8IoULFhFqH8vtQsou4jBKW4LYJ9E6g16OA1MnVZCihKURKADYQHZQXc1rs8vomJOJ35FLwhY2RbpXREmGuISxbzUwIilp7xt_6simWyDtfDcVM3YwbJNjXD_1YlKfWZb2zzzI2DYImtBcZy6_LKdJ9sktAxVjs4lLpHcPALiFXzfn-AwQN0UThP0kHcgHzpMnzktlMYiyXINJ_MF8tFMSj-JJHCMVd9-uGgvOtaKdm9suTeD_iWegjWAyC9Wo">this</a>
+
+
+
+
