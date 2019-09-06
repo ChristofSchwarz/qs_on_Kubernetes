@@ -1,5 +1,12 @@
 # Impersonating into QSEoK using JWT 
 
+### Installing
+Download this folder (node.js, package.json, priv_, pub_key.txt, pub_key.txt). You need npm and node (NodeJs). To install the dependencies, run from the same folder
+```
+npm install
+```
+
+### Using it
 This node app starts a minimalistic webservice on port 31974 ... it produces a JWT token and signs it with the key file "priv_key.txt" in a format, that QSEoK will accept as a Bearer Token. You will have to provide a few parameters as querystrings like
 
 http://localhost:31974/token?kid=my-key-identifier&sub=csw@qlik.com&name=Christof%20Schwarz&groups=["Finance","Everyone"]&expires=7200
@@ -46,6 +53,7 @@ identity-providers:
             SJxIUvPgQpuWgVRrDQMHobMCAwEAAQ==
             -----END PUBLIC KEY-----
 ```
+
 
 
 
