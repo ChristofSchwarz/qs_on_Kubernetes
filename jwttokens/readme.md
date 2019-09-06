@@ -6,7 +6,10 @@ http://localhost:31974/token?kid=my-key-identifier&id=csw@qlik.com&name=Christof
 
 It will look something like <a href="https://jwt.io#debugger-io?token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im15LWtleS1pZGVudGlmaWVyIn0.eyJpc3MiOiJodHRwczovL3FsaWsuYXBpLmludGVybmFsIiwiYXVkIjoicWxpay5hcGkiLCJzdWIiOiJjc3dAcWxpay5jb20iLCJncm91cHMiOlsiRmluYW5jZSIsIkV2ZXJ5b25lIl0sIm5hbWUiOiJDaHJpc3RvZiBTY2h3YXJ6IiwiZXhwIjoxNTY3Nzg4NjA0fQ.aHg-Tqy0hKEtJ31dp-yI6gDcyKwk_EwKfy9-82Mn-0GnZrapxkvyPpeBHSWfM58uPF6eqSvMW-L0li5jP2vSdVmgmvUSWHZ7ZmqzvDnrYwdCMGKVnwOo7aKqneJ19QcFf8YTwPQl-NeDnWQr-R2JyKb-oROpj4hI_nOT8Cl-dPnTxNNePa-LTwXbiQquAbPQUPIV6rSdaldumsiLoXno5XuywQVQGudX0D9D_WLNn0kKCQmSXMCkbDi7q2O9aPWS6EQYkP1I2PFX1BMYDgEQxqonhmavI2n73HzuzJFt02WEIhdm9eBAdvxK3O37yMY8K0vDjvm1pPbNsj2-NUVU-aPFFp0Uxa9K7PFg7O9cTeIsJJ_pcXbqKEztMiOBZ4MQj6-88yspPCK2Ycdp2NYORv-Iz9E54UDRXOIqJOCYKWnPMI8IoULFhFqH8vtQsou4jBKW4LYJ9E6g16OA1MnVZCihKURKADYQHZQXc1rs8vomJOJ35FLwhY2RbpXREmGuISxbzUwIilp7xt_6simWyDtfDcVM3YwbJNjXD_1YlKfWZb2zzzI2DYImtBcZy6_LKdJ9sktAxVjs4lLpHcPALiFXzfn-AwQN0UThP0kHcgHzpMnzktlMYiyXINJ_MF8tFMSj-JJHCMVd9-uGgvOtaKdm9suTeD_iWegjWAyC9Wo" target="_blank">this</a>.
 
-Add this to your qliksense .yaml configuration (make sure you dont break the structure when you already have configured another identity-provider. The "hostname" entry can be the same as the you already had a configuration for (pointing to your idp such as auth0. The "realm" will become the static part of the user in QSEoK, whereas the "id" of the token will be the dynamic part. The below with the above will lead to a user in QSEoK to be like **custom\csw@qlik.com** 
+Add this to your qliksense .yaml configuration (make sure you dont break the structure when you already have configured another identity-provider. 
+ - The "hostname" entry can be the same as the you already had a configuration for (pointing to your idp such as auth0. 
+ - The "realm" will become the static part of the user in QSEoK, whereas the "id" of the token will be the dynamic part. The below with the above will lead to a user in QSEoK to be like **custom\csw@qlik.com** 
+ - the public key below is the matching key for the private key which is used to sign the jwt. If you don't want to create your own (which I encourage) you can use the pub_key.txt and priv_key.txt from this git.
 
 ```
 identity-providers:
