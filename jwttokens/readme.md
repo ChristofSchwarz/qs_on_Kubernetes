@@ -1,9 +1,10 @@
 # Impersonating into QSEoK using JWT 
 
 ### Installing
-Download this folder (node.js, package.json, priv_, pub_key.txt, pub_key.txt). You need npm and node (NodeJs). To install the dependencies, run from the same folder
+Download this folder (node.js, package.json, priv_, pub_key.txt, pub_key.txt). You need npm and node (NodeJs). To install the dependencies, run from the same folder ... 
 ```
 npm install
+node app.js
 ```
 
 ### Using it
