@@ -6,12 +6,12 @@ var privkey = fs.readFileSync('./priv_key.txt');
 var app = express();
 
 app.get('/token', function(appReq, appRes){
-  if (!appReq.query.kid || !appReq.query.id) {
-    appRes.send(`Error: must provide at least "kid" and "id" as querystring parameters.
+  if (!appReq.query.kid || !appReq.query.sub) {
+    appRes.send(`Error: must provide at least "kid" and "sub" as querystring parameters.
     Other query-strings supported:
     kid : identifier also used in the identity-provider config
-    id : user id - can also be the email
-    user : friendly name of user
+    sub : user id - can be the email
+    user : friendly name of user (if omitted it will be the same as sub)
     groups : an array of groups that the user is memmber of, syntax ["Finance","Everyone"]
     expires : seconds that the token will be valid for e.g. 7200`);
   } else {
@@ -21,9 +21,9 @@ app.get('/token', function(appReq, appRes){
     var jwt_payload = {
         iss: "https://qlik.api.internal",
         aud: "qlik.api",
-        sub: appReq.query.id,
+        sub: appReq.query.sub,
         groups : (appReq.query.hasOwnProperty('groups')?JSON.parse(appReq.query.groups):['Everyone']),
-        name: appReq.query.name||appReq.query.id,
+        name: appReq.query.name||appReq.query.sub,
         exp: Math.round((new Date().getTime() + expSeconds * 1000)/1000)  
     };
     
