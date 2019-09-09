@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "express": "^4.17.0",
-    "https": "^1.0.0",
-    "jsonwebtoken": "^8.5.1"
-  }
-}
