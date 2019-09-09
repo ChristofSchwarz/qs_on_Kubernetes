@@ -59,5 +59,7 @@ kubectl delete service qlikcustom-getjwt-np
 kubectl delete pod qlikcustom-getjwt
 kubectl delete secret qlikcustom-jwtkey
 ```
+You can also execute the file remove-all-getjwt-objects.bat (if your console is in Windows) or remove-all-getjwt-objects.sh (if your console is Linux) to execute all 4 delete-commands at once. 
+
 Finally, learn how to <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/jwtcreate/readme/webservice.md">use this webservice</a>
 
