@@ -13,6 +13,7 @@ You will have to provide a few parameters as querystrings. The example syntax is
 http://localhost:31974/token?kid=my-key-identifier&sub=csw@qlik.com&name=Christof%20Schwarz&groups=["Finance","Everyone"]&expires=7200
 ```
 The following query string arguments are supported/needed:
+
 | param | type | explanation |
 | ----- | ---- | ----------- |
 | kid | mandadory | identifier also used in the identity-provider config |
