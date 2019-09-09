@@ -1,4 +1,4 @@
-## run locally
+## Run NodeJS App Locally
 Prerequesites:
  - You have access with helm to Qlik Sense Enterprise on Kubernetes in your Cluster and you already edited the "identity-provider" section in the qliksense.yaml (readme.md)
  - You have NodeJS (and its package manager NPM) installed locally
