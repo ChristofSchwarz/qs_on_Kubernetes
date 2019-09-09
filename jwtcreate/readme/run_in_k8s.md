@@ -59,5 +59,5 @@ kubectl delete service qlikcustom-getjwt-np
 kubectl delete pod qlikcustom-getjwt
 kubectl delete secret qlikcustom-jwtkey
 ```
-Now learn how to <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/jwtcreate/readme/webservice.md">use this webservice</a>
+Finally, learn how to <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/jwtcreate/readme/webservice.md">use this webservice</a>
 
