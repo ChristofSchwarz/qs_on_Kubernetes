@@ -8,5 +8,6 @@ Open CMD or SH and navigate to this folder, where app.js is located. Run the fol
 npm install
 node app.js
 ```
-A local web service will start. You can use curl or a web browser and navigate to http://localhost:31974/token 
-Read on under "Using the webservice" to understand the parameters of it.
+A local web service will start. You can use curl or a web browser and navigate to http://localhost:31974/token?... 
+
+Read on under <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/jwtcreate/readme/webservice.md">Using the webservice</a> to understand the parameters of it.
