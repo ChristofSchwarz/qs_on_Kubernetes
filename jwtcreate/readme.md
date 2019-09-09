@@ -1,25 +1,25 @@
- ## The idea
-This minimalistic NodeJS app creates a signed JWT token which can work as Bearer Authentication in Qlik Sense Enterprise on Kubernetes. It allows you to **impersonate as the user you want** and to automate API calls that otherwise are not possible. Handle with caution.
-You can do this directly using https://jwt.io if you provide the relevant JWT header-keys and JWT payload entries. In this case, you don't have to use my NodeJS app. Create the key pair (next section) and then continue to read at "Using JWT.IO" then.
-
-This tool runs in two different modes
- - locally (you will need nodejs and npm installed)
- - as Kubernetes Pod (you need to have kubectl access to your Kubernetes cluster)
-To get started download this entire folder (get the whole git and use folder “jwtcreate”)
+ ## About the Solution
+Qlik Sense Enterprise on Kubernetes supports - besides a Open ID Connect-compliant Identity Provider - the authorization as a user using Bearer Authentication. It allows you to **impersonate as the user you want** and to automate API calls that otherwise are not possible. Handle with caution. Below I'll explain the setup you need in the helm deployment (modify qliksense.yaml) and 3 ways to create the JWT token: 
+ - Using JWT.IO
+ - Using a simple NodeJS app (in this folder) locally 
+ - Using the simple NodeJS in Kubernetes (pulled from Docker hub) 
+ 
+My minimalistic NodeJS app creates a signed JWT token with just a few necessary parameters that you have to provide. So it is simple to use. However, you can create working JWT tokens also using https://jwt.io but you will have to make sure, all parameters are present and correct, so more complicated to use.
 
 ## Create public and private SSH key pair
-If you want to skip this step for a quick test, you may use the attached priv.key and pub.key although this compromises your security!
-Any SSH key pair would work. To create a new one (under Linux) execute these commands
+If you want to skip this step for a quick test, you may use the attached priv.key and pub.key although this compromises your security (I know the key to your installation then!). Any SSH key pair would work. To create a new one (under Linux) execute these commands
 ```
 openssl genrsa -out priv.key 4096
 openssl rsa -in priv.key -pubout -out pub.key
 ```
+Now you have two files, priv.key and pub.key 
+
 ## Configure QSEoK Identity provider
-Edit the .yaml file which you last used to install or upgrade your Qlik Sense Enterprise on Kubernetes with helm. If you are not certain what the last helm configuration was, use this command to create a current qliksense.yaml file: (qlik in below example is the name of the deployment, yours could be different such as qliksense or qseok)
+Edit the .yaml file which you last used to install or upgrade your Qlik Sense Enterprise on Kubernetes with helm. If you are not certain what the last helm configuration was, use the following command to dump the current settings into a new file qliksense.yaml: (qlik in below example is the name of the deployment, yours could be different maybe qliksense or qseok?)
 ```
 helm get values qlik >qliksense.yaml
 ``` 
-Edit the .yaml and find the section for "identity-providers". You should find a section "identity-providers" already, otherwise your QSEoK installation is not ready to be used yet. There is already a "hostname" configured within that section. Remember that one and use the same hostname, when you insert the text below. There are 4 very important settings:
+Edit the .yaml and find the section for "identity-providers". You will already find a section "identity-providers", otherwise your QSEoK installation wasn't yet set up for users to login. There is already a "hostname" configured within that section. Remember that one and use the same hostname, when you insert the text below. There are 4 very important settings:
  * hostname -> this defines which tenant the user is assigned to. Use the same hostname as the one you already had 
  * realm -> this defines the "part before the \" of the userid. Use the same as you already had
  * kid -> choose one and use it later in the webservice or on jwt.io
@@ -57,10 +57,10 @@ Then apply the new setting with this command. Note "qlik" and "qlik-stable" may 
 ```
 helm upgrade --install qlik qlik-stable/qliksense -f qliksense.yaml
 ```
-Next you can choose to either use
- - jwt.io to <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/jwtcreate/jwt_io.md">create the tokens</a> (no further config needed but lots of copy/paste before you get the key)
- - run this NodeJS app locally (outside the Cluster)
- - run in Kubernetes cluster 
+Next you can choose how to create JWT tokens
+ - Using <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/jwtcreate/jwt_io.md">jwt.io to create the tokens</a> (no further config needed but lots of copy/paste before you get the key)
+ - run <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/jwtcreate/readme/local_nodejs.md">my NodeJS app locally</a> (outside the Cluster)
+ - run <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/jwtcreate/readme/run_in_k8s.md">my app within Kubernetes cluster</a> 
  
 Choose your way. 
 
