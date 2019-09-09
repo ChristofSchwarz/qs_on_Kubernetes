@@ -27,5 +27,10 @@ The generated JWT will look something like <a href="https://jwt.io#debugger-io?t
 The user, that will be impersonated when you use this token has the following characteristics:
  - The tenant it is assigned to is the one assigned to the hostname in the "identitiy-provider" setting of the qliksense.yaml (You can *not* choose the tenant here, it is wired via the .yaml)
  - The user-id is made of two parts: realm\sub ... whereas the realm is also driven by the configuration in the qliksense.yaml, the sub is the argument you specified above when creating the token. So it is half-way dynamic in the sense, that the part after backslash \ is derived from the token. 
+ 
+## Response
 
+The response of my NodeJS app is a Json object, where you will find the "access_token" key as the first information and some more information. 
+
+Now you can use the token to impersonate. <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/jwtcreate/readme/using_token.md">Check out</a> how to use it.
 
