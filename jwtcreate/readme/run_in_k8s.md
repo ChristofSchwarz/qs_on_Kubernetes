@@ -21,6 +21,7 @@ In fact you could use the pod already with command line such as
 kubectl exec qlikcustom-getjwt curl "http://localhost:31974/token?..."
 ```
 However, to use it from as a web service, lets setup a service on top of it
+
 3) Setup a service
 
 You can choose between a NodePort service (use for Minikube) and a LoadBalancer (use in a managed Kubernetes scenario like Azure AKS).
