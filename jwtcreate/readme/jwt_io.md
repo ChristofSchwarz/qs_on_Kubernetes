@@ -28,3 +28,4 @@ This is an alternative way to create a JWT token, but you have to copy/paste qui
  
  <img src="https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/jwtcreate/readme/jwtio.png"/>
  
+Now you can use the token to impersonate. <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/jwtcreate/readme/using_token.md">Check out</a> how to use it.
