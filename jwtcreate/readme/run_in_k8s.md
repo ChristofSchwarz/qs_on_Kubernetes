@@ -5,13 +5,13 @@ Prerequisites:
  - You have kubectl access to your Kubernetes cluster using kubectl since we have to setup a secret, a pod, and a service
 
 
-1) Setup the secret
+### Setup the secret
 The priv.key file needs to be setup as a secret and it will be used by the NodeJS app in the pod rather than the priv.key file. It is recommened at this point that you created your own key pair (see above).
 ```
 kubectl create secret generic qlikcustom-jwtkey --from-file priv.key
 kubectl describe secret qlikcustom-jwtkey
 ```
-2) Setup the pod
+### Setup the pod
 ```
 kubectl create -f getjwt-pod.yaml
 kubectl describe pod qlikcustom-getjwt
@@ -22,11 +22,11 @@ kubectl exec qlikcustom-getjwt curl "http://localhost:31974/token?..."
 ```
 However, to use it from as a web service, lets setup a service on top of it
 
-3) Setup a service
+### Setup a service
 
 You can choose between a NodePort service (use for Minikube) and a LoadBalancer (use in a managed Kubernetes scenario like Azure AKS).
 
-### NodePort Service
+#### NodePort Service
 ```
 kubectl create -f getjwt-svc-np.yaml
 kubectl get svc qlikcustom-getjwt-np
@@ -38,7 +38,7 @@ qlikcustom-getjwt-np   NodePort   10.0.184.105   <none>        31974:31975/TCP
 ```
 Navigate to your clusters main external address. In case of Minikube it is the one that the VM has got (yes, it is port 31975 not 31974 when using NodePort). Try curl http://192.168.56.71:31975/token
 
-### LoadBalancer Service
+#### LoadBalancer Service
 In a managed Kubernetes Scenario (Azure AKS, ...) you would expose the service to be accessible from internet.
 ```
 kubectl create -f getjwt-svc-lb.yaml
@@ -51,7 +51,7 @@ qlikcustom-getjwt-lb                    LoadBalancer   10.0.36.192    51.140.253
 ```
 In above example the service is now available here: http://51.140.253.101:31974/token 
 
-### uninstalling from Kubernetes
+### Uninstalling from Kubernetes
 If you want to uninstall this app, remove the objects using below commands:
 ```
 kubectl delete service qlikcustom-getjwt-lb
