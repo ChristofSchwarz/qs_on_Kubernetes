@@ -16,11 +16,11 @@ kubectl describe secret qlikcustom-jwtkey
 kubectl create -f getjwt-pod.yaml
 kubectl describe pod qlikcustom-getjwt
 ```
-In fact you could use the pod already with command line such as
+In fact you could use the pod already direclty without a service, using a command line such as
 ```
 kubectl exec qlikcustom-getjwt curl "http://localhost:31974/token?..."
 ```
-However, to use it from as a web service, lets setup a service on top of it
+However, to use it from ousside, lets setup a service on top of it
 
 ### Setup a service
 
