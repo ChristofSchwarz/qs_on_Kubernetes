@@ -58,7 +58,7 @@ Then apply the new setting with this command. Note "qlik" and "qlik-stable" may 
 helm upgrade --install qlik qlik-stable/qliksense -f qliksense.yaml
 ```
 Next you can choose how to create JWT tokens
- - Using <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/jwtcreate/jwt_io.md">jwt.io to create the tokens</a> (no further config needed but lots of copy/paste before you get the key)
+ - Using <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/jwtcreate/readme/jwt_io.md">jwt.io to create the tokens</a> (no further config needed but lots of copy/paste before you get the key)
  - run <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/jwtcreate/readme/local_nodejs.md">my NodeJS app locally</a> (outside the Cluster)
  - run <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/jwtcreate/readme/run_in_k8s.md">my app within Kubernetes cluster</a> 
  
