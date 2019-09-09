@@ -26,3 +26,5 @@ This is an alternative way to create a JWT token, but you have to copy/paste qui
  - Paste the content of your pub.key into the first field of "VERIFY SIGNATURE"
  - Paste the content of your priv.key into the second field of "VERIFY SIGNATURE"
  
+ <img src="https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/jwtcreate/readme/jwtio.png"/>
+ 
