@@ -1,0 +1,15 @@
+{
+  "name": "csw_qseok_impersonate",
+  "version": "1.0.0",
+  "description": "small node.js app that creates JWT tokens to login with Qlik Sense on Kubernetes",
+  "author": "Christof Schwarz <csw@qlik.com>",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.0",
+    "https": "^1.0.0",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
