@@ -17,6 +17,8 @@ openssl rsa -in priv.key -pubout -out pub.key
 ```
 Now you have two files, priv.key and pub.key 
 
+Alternatively, there are tools where you can create RSA keys online, like https://travistidwell.com/jsencrypt/demo/
+
 ## Configure QSEoK Identity provider
 Edit the .yaml file which you last used to install or upgrade your Qlik Sense Enterprise on Kubernetes with helm. If you are not certain what the last helm configuration was, use the following command to dump the current settings into a new file qliksense.yaml: (qlik in below example is the name of the deployment, yours could be different maybe qliksense or qseok?)
 ```
@@ -61,7 +63,7 @@ Then apply the new setting with this command. Note "qlik" and "qlik-stable" may 
 helm upgrade --install qlik qlik-stable/qliksense -f qliksense.yaml
 ```
 Next you can choose how to create JWT tokens
- - Using <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/jwtcreate/readme/jwt_io.md">jwt.io to create the tokens</a> (no further config needed but lots of copy/paste before you get the key)
+ - Using <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/jwtcreate/readme/jwt_io.md">jwt.io to create the tokens</a> (no further config needed but just some copy/paste needed before you get the key)
  - run <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/jwtcreate/readme/local_nodejs.md">my NodeJS app locally</a> (outside the Cluster)
  - run <a href="https://github.com/ChristofSchwarz/qs_on_Kubernetes/blob/master/jwtcreate/readme/run_in_k8s.md">my app within Kubernetes cluster</a> 
  
