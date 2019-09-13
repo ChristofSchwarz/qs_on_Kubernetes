@@ -6,7 +6,7 @@ This is an alternative way to create a JWT token, but you have to copy/paste qui
 {
   "alg": "RS256",
   "typ": "JWT",
-  "kid": "my-identifier"
+  "kid": "my-key-identifier"
 }
 ```
  - Paste this into the "PAYLOAD DATA" field:
