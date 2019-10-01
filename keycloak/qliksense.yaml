@@ -1,0 +1,39 @@
+engine:
+  acceptEULA: "yes"
+
+global:
+  persistence:
+    storageClass: localnfs
+
+mongodb:
+  uri: mongodb://qlik:Qlik1234@mongo-mongodb.default.svc.cluster.local:27017/qsefe?ssl=false
+
+edge-auth:
+  oidc:
+    enabled: false   # no built-in oidc
+
+elastic-infra:
+  nginx-ingress:
+    controller:
+      service:
+        type: NodePort
+        nodePorts:
+          https: 443
+#      extraArgs.report-node-internal-ip-address: ""
+
+
+identity-providers:
+  secrets:
+    idpConfigs:
+      - hostname: "192.168.56.234" 
+        primary: true
+        discoveryUrl: "http://192.168.56.234:32080/auth/realms/master/.well-known/openid-configuration"
+        clientId: "qliklogin"
+        clientSecret: "d619a29c-8831-44fd-b2b5-f5860ee7c8aa"
+        realm: "keycloak"
+        clockToleranceSec: 100000000
+        scope: "openid profile"
+        useClaimsFromIdToken: true
+        claimsMapping:
+          client_id: [ "clientId" ]
+          name: ["name", "preferred_username", "given_name"]
