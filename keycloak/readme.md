@@ -2,7 +2,7 @@
 
 Warning: No config change you set in the Keycloak instance will persist (restarting the pod flushes all setup!)
 
-You can start the keycloak image as a deployment and add a service around it for your Minikube with below commands.
+You can start the keycloak image as a deployment and add a service around it for your Minikube with below commands. In order to work in Minikube I set the service type to "NodePort". If deployed on a production cluster, you may need type "LoadBalancer". In this case, edit the keycloak-svc.yaml first.
 
 If you downloaded both yaml files from this git, go:
 ```
@@ -19,3 +19,14 @@ To remove the deployment and the service, go
 kubectl delete service keycloak
 kubectl delete deployments keycloak
 ```
+
+# Using Helm to deploy keycloak
+
+Found installation here https://github.com/codecentric/helm-charts
+```
+helm repo add codecentric https://codecentric.github.io/helm-charts
+helm install -n keycloak codecentric/keycloak --set keycloak.service.type=NodePort --set keycloak.service.nodePort=8080
+```
+All other settings you can pass (with --set or in a .yaml file) explained here:
+https://github.com/codecentric/helm-charts/tree/master/charts/keycloak
+
