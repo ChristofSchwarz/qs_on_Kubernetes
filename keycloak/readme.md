@@ -6,13 +6,11 @@ You can start the keycloak image as a deployment and add a service around it for
 
 If you downloaded both yaml files from this git, go:
 ```
-kubectl create -f keycloak-depl.yaml
-kubectl create -f keycloak-svc.yaml
+kubectl create -f depl-and-svc.yaml
 ```
 Or you can directly start them from my git
 ```
-kubectl create -f https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/keycloak/keycloak-depl.yaml
-kubectl create -f https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/keycloak/keycloak-svc.yaml
+kubectl create -f https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/keycloak/depl-and-svc.yaml
 ```
 To remove the deployment and the service, go
 ```
