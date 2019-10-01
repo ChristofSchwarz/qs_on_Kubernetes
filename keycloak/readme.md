@@ -12,15 +12,26 @@ Or you can directly start them from my git
 ```
 kubectl create -f https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/keycloak/keycloak-depl+svc.yaml
 ```
+
+## Create a client on Keycloak to authenticate QSEoK users
+
+ * Navigate your browser to http://192.168.56.234:32080/auth/admin/master/console/#/create/client/master
+ * Login with "admin" "admin"
+ * Download this <a href="https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/keycloak/kc-client-settings.json">.json from the git</a>, then click Import Select file from the Keycloak console.
+ * This will create a new client called "qliklogin" (two Mappers have been added, too: name and email)
+ * Go to sheet "Credentials" and note the Secret-ID
+ * Download this <a href="https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/keycloak/qliksense.yaml">.yaml file</a> and edit the Client-Secret before you apply the changes with "helm upgrade ..."
+```
+helm upgrade --install qlik qlik-stable/qliksense -f qliksense.yaml
+```
+ * you can now login to Qlik Sense with the keycloak user "admin" by going to https://192.168.56.234/ 
+ 
+## Remove Keycloak
 To remove the deployment and the service, go
 ```
 kubectl delete service keycloak
 kubectl delete deployment keycloak
 ```
-Navigate your browser to http://192.168.56.234:32080 
-Login with "admin" "admin"
-
-
 
 
 # Using Helm to deploy keycloak
