@@ -2,7 +2,7 @@
 
 **Warning: No config change you set in the Keycloak instance will persist (restarting the pod flushes all setup!) Use this for a quick test only. Below steps are just the absolute minimum to get it run.**
 
-The steps below will start keycloak as a K8s deployment and expose it as a service for your Minikube (NodePort). If deployed on a production cluster, you may need the service type "LoadBalancer". In this case, edit the keycloak-depl+svc.yaml file first.
+The steps below will start keycloak as a K8s deployment and expose it as a service for your Minikube (NodePort). If deployed on a production cluster, you may need the service type "LoadBalancer". In this case, edit the `keycloak-depl+svc.yaml` file first.
 
 If you downloaded the yaml file from this git, go:
 ```
