@@ -18,7 +18,7 @@ kubectl delete service keycloak
 kubectl delete deployment keycloak
 ```
 Navigate your browser to http://192.168.56.234:32080 
-
+Login with "admin" "admin"
 
 
 
