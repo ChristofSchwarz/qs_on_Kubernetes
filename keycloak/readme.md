@@ -15,7 +15,7 @@ kubectl create -f https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubern
 
 ## Create a client on Keycloak to authenticate QSEoK users
 
- * Navigate your browser to <a href="http://192.168.56.234:32080/auth/admin/master/console/#/create/client/master" target="_blank">`http://192.168.56.234:32080/auth/admin/master/console/#/create/client/master`</a>
+ * Navigate your browser to <a href="http://192.168.56.234:32080/auth/admin/master/console/#/create/client/master" target="_blank">http:<span/>//192.168.56.234:32080/auth/admin/master/console/#/create/client/master</a>
  * Login with "admin" "admin"
  * Download this <a href="https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/keycloak/kc-client-settings.json">.json file</a> from this git, then click Import Select file from the Keycloak console.
  * This will create a new client called "qliklogin" (two Mappers have been added, too: name and email)
