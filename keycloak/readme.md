@@ -12,10 +12,10 @@ Or you can directly start them from my git
 ```
 kubectl create -f https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/keycloak/keycloak-depl+svc.yaml
 ```
-[go](http://stackoverflow.com){:target="_blank"}
+
 ## Create a client on Keycloak to authenticate QSEoK users
 
- * Navigate your browser to <a href="http://192.168.56.234:32080/auth" target="_blank">http:<span/>//192.168.56.234:32080/auth/admin/master/console/#/create/client/master</a>
+ * Navigate your browser to http://192.168.56.234:32080/auth/admin/master/console/#/create/client/master (thats the "Create Client" dialog in the Keycloak Administration Console)
  * Login with "admin" "admin"
  * Download this <a href="https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/keycloak/kc-client-settings.json">.json file</a> from this git, then click Import Select file from the Keycloak console.
  * This will create a new client called "qliklogin" (two Mappers have been added, too: name and email)
@@ -24,7 +24,7 @@ kubectl create -f https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubern
 ```
 helm upgrade --install qlik qlik-stable/qliksense -f qliksense.yaml
 ```
- * you can now login to Qlik Sense with the keycloak user "admin" by going to <a href="https://192.168.56.234/" target="_blank">`https://192.168.56.234/`</a>
+ * you can now login to Qlik Sense with the keycloak user "admin" by going to https://192.168.56.234/
  * You can go to the Keycloak console and create more users, but none will be persisted if the keycloak pod is stopped.
  
 ## Remove Keycloak
