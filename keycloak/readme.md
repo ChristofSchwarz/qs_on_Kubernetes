@@ -25,6 +25,7 @@ kubectl create -f https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubern
 helm upgrade --install qlik qlik-stable/qliksense -f qliksense.yaml
 ```
  * you can now login to Qlik Sense with the keycloak user "admin" by going to https://192.168.56.234/ 
+ * You can go to the Keycloak console and create more users, but none will be persisted if the keycloak pod is stopped.
  
 ## Remove Keycloak
 To remove the deployment and the service, go
