@@ -44,7 +44,7 @@ spec:
   - name: http
     port: 8080
     targetPort: 8080
-    nodePort: 8080
+    nodePort: 32080
   selector:
     app: keycloak
   type: NodePort
