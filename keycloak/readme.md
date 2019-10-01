@@ -4,19 +4,24 @@ Warning: No config change you set in the Keycloak instance will persist (restart
 
 You can start the keycloak image as a deployment and add a service around it for your Minikube with below commands. In order to work in Minikube I set the service type to "NodePort". If deployed on a production cluster, you may need type "LoadBalancer". In this case, edit the keycloak-svc.yaml first.
 
-If you downloaded both yaml files from this git, go:
+If you downloaded the yaml file from this git, go:
 ```
-kubectl create -f depl-and-svc.yaml
+kubectl create -f keycloak-depl+svc.yaml
 ```
 Or you can directly start them from my git
 ```
-kubectl create -f https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/keycloak/depl-and-svc.yaml
+kubectl create -f https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/keycloak/keycloak-depl+svc.yaml
 ```
 To remove the deployment and the service, go
 ```
 kubectl delete service keycloak
-kubectl delete deployments keycloak
+kubectl delete deployment keycloak
 ```
+Navigate your browser to http://192.168.56.234:32080 
+
+
+
+
 
 # Using Helm to deploy keycloak
 
