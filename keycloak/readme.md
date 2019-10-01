@@ -1,14 +1,14 @@
 # Using Keycloak as Identity Provider for QSEoK
 
-Warning: No config change you set in the Keycloak instance will persist (restarting the pod flushes all setup!)
+Warning: No config change you set in the Keycloak instance will persist (restarting the pod flushes all setup!) Use this for a quick test only. Below steps are just the absolute minimum to get it run.
 
-You can start the keycloak image as a deployment and add a service around it for your Minikube with below commands. In order to work in Minikube I set the service type to "NodePort". If deployed on a production cluster, you may need type "LoadBalancer". In this case, edit the keycloak-svc.yaml first.
+The steps below will start keycloak as a K8s deployment and add expose it as a NodePort service for your Minikube. If deployed on a production cluster, you may need the service type "LoadBalancer". In this case, edit the keycloak-depl+svc.yaml file first.
 
 If you downloaded the yaml file from this git, go:
 ```
 kubectl create -f keycloak-depl+svc.yaml
 ```
-Or you can directly start them from my git
+Or you can directly create the objects from a url to my git
 ```
 kubectl create -f https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/keycloak/keycloak-depl+svc.yaml
 ```
@@ -24,7 +24,11 @@ kubectl create -f https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubern
 ```
 helm upgrade --install qlik qlik-stable/qliksense -f qliksense.yaml
 ```
- * you can now login to Qlik Sense with the keycloak user "admin" by going to https://192.168.56.234/
+ * if you upgraded a Qlik Sense deployment (not first-time installed it now) then you have to manually restart the pod "qlik-identity-providers-#######":
+```
+kubectl delete $(kubectl get pods -o=name|grep "identity-providers")
+```
+ * you can now login to Qlik Sense with the keycloak user "admin" by going to https://192.168.56.234/ (because you already logged in, this happens without further prompting. You can check who you are logged in as by going to https://192.168.56.234/api/v1/users/me)
  * You can go to the Keycloak console and create more users, but none will be persisted if the keycloak pod is stopped.
  
 ## Remove Keycloak
@@ -34,14 +38,16 @@ kubectl delete service keycloak
 kubectl delete deployment keycloak
 ```
 
-
 # Using Helm to deploy keycloak
 
 Found installation here https://github.com/codecentric/helm-charts
 ```
 helm repo add codecentric https://codecentric.github.io/helm-charts
-helm install -n keycloak codecentric/keycloak --set keycloak.service.type=NodePort --set keycloak.service.nodePort=8080
+helm install -n keycloak codecentric/keycloak --set keycloak.service.type=NodePort --set keycloak.service.nodePort=32080
 ```
 All other settings you can pass (with --set or in a .yaml file) explained here:
 https://github.com/codecentric/helm-charts/tree/master/charts/keycloak
+
+Without further configuration, also this helm deployment won't persist (it starts a separate postgres-db though). Let me 
+know if you managed a setup that persists, so I can share ...
 
