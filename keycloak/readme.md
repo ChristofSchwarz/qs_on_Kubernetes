@@ -19,6 +19,7 @@ kubectl create -f https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubern
  * Login with "admin" "admin"
  * Download this <a href="https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/keycloak/kc-client-settings.json">.json file</a> from this git, then click Import Select file from the Keycloak console.
  * This will create a new client called "qliklogin" (two Mappers have been added, too: name and email)
+![alttext](https://github.com/ChristofSchwarz/pics/raw/master/_keycloak.png "screenshot") 
  * Go to sheet "Credentials" and note the Secret-ID
  * Download this <a href="https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/keycloak/qliksense.yaml">.yaml file</a> and edit the Client-Secret before you apply the changes with "helm upgrade ..."
 ```
