@@ -12,7 +12,7 @@ Or you can directly start them from my git
 ```
 kubectl create -f https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/keycloak/keycloak-depl+svc.yaml
 ```
-[go](http://stackoverflow.com){:target="_blank" rel="noopener"}
+[go](http://stackoverflow.com){:target="_blank"}
 ## Create a client on Keycloak to authenticate QSEoK users
 
  * Navigate your browser to <a href="http://192.168.56.234:32080/auth" target="_blank">http:<span/>//192.168.56.234:32080/auth/admin/master/console/#/create/client/master</a>
