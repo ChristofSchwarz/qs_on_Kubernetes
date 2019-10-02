@@ -52,3 +52,10 @@ https://github.com/codecentric/helm-charts/tree/master/charts/keycloak
 Without further configuration, also this helm deployment won't persist (it starts a separate postgres-db though). Let me 
 know if you managed a setup that persists, so I can share ...
 
+# Errors 
+The configuration of the identity-provider can lead to some error messages by Qlik Sense:
+```
+{"errors":[{"title":"No authentication configured for this hostname","code":"LOGIN-2","status":"401"}]}
+```
+
+
