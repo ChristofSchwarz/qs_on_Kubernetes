@@ -56,6 +56,7 @@ know if you managed a setup that persists, so I can share ...
 The configuration of the identity-provider can lead to some error messages by Qlik Sense:
 ```
 {"errors":[{"title":"No authentication configured for this hostname","code":"LOGIN-2","status":"401"}]}
+{"errors":[{"title":"Invalid identity provider configuration","code":"INVALID-IDP-CONFIG","status":"401"}]}
 ```
 
 
