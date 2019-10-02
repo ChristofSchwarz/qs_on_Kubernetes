@@ -45,6 +45,10 @@ spec:
     port: 8080
     targetPort: 8080
     nodePort: 32080
+  - name: https
+    port: 8443
+    targetPort: 8443
+    nodePort: 32083    
   selector:
     app: keycloak
   type: NodePort
