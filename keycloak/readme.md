@@ -12,6 +12,12 @@ Or you can directly create the objects from a url to my git
 ```
 kubectl create -f https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/keycloak/keycloak-depl+svc.yaml
 ```
+**Note:** Keycloak is a large deployment, it can take 10 min+ until it becomes ready. The command to check the status of just the keycloak pad is
+```
+kubectl get pod |grep keycloak
+# or
+kubectl get pod -o=custom-columns=:.status.phase --selector=app=keycloak --no-headers
+```
 
 ## Create a client on Keycloak to authenticate QSEoK users
 
