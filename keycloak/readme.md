@@ -21,6 +21,7 @@ kubectl get pod -o=custom-columns=:.status.phase --selector=app=keycloak --no-he
 
 ## Create a client on Keycloak to authenticate QSEoK users
 
+### Manual steps
  * Navigate your browser to http://192.168.56.234:32080/auth/admin/master/console/#/create/client/master (thats the "Create Client" dialog in the Keycloak Administration Console)
  * Login with "admin" "admin"
  * Download this <a href="https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/keycloak/kc-client-settings.json">.json file</a> from this git, then click Import Select file from the Keycloak console.
@@ -28,6 +29,13 @@ kubectl get pod -o=custom-columns=:.status.phase --selector=app=keycloak --no-he
 ![alttext](https://github.com/ChristofSchwarz/pics/raw/master/_keycloak.png "screenshot") 
  * Go to sheet "Credentials" and note the Secret-ID
  * Download this <a href="https://raw.githubusercontent.com/ChristofSchwarz/qs_on_Kubernetes/master/keycloak/qliksense.yaml">.yaml file</a> and edit the Client-Secret before you apply the changes with "helm upgrade ..."
+
+### Create the client with Keycloak REST API
+ * Get an access token
+```
+curl -X POST https://192.168.56.234:32083/auth/realms/master/protocol/openid-connect/token -d 'username=admin&password=admin&client_id=admin-cli&grant_type=password' --insecure
+```
+
 ```
 helm upgrade --install qlik qlik-stable/qliksense -f qliksense.yaml
 ```
@@ -57,6 +65,10 @@ https://github.com/codecentric/helm-charts/tree/master/charts/keycloak
 
 Without further configuration, also this helm deployment won't persist (it starts a separate postgres-db though). Let me 
 know if you managed a setup that persists, so I can share ...
+
+# Setting persistence with Postgre SQL
+I found a good guide here https://www.dirigible.io/blogs/2018/06/25/kubernetes_keycloak_postgresql_dirigible.html and here https://severalnines.com/database-blog/using-kubernetes-deploy-postgresql. Thanks for those contributions, you made my day.
+
 
 # Errors 
 The configuration of the identity-provider can lead to some error messages by Qlik Sense:
