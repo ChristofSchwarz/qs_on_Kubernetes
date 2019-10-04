@@ -1,8 +1,15 @@
 # Using Keycloak as Identity Provider for QSEoK
 
-**Warning: No config change you set in the Keycloak instance will persist (restarting the pod flushes all setup!) Use this for a quick test only. Below steps are just the absolute minimum to get it run.**
+The steps below will start keycloak as a K8s deployment and expose it as a service for your Minikube (NodePort). If deployed on a production cluster, you may need the service type "LoadBalancer". In this case, edit the `keycloak-svc.yaml` file first. 
 
-The steps below will start keycloak as a K8s deployment and expose it as a service for your Minikube (NodePort). If deployed on a production cluster, you may need the service type "LoadBalancer". In this case, edit the `keycloak-depl+svc.yaml` file first. It assumes Qlik Sense to be installed on IP 192.168.56.234 (the vagrant box we provisioned in this .git), if yours is different, pls edit the configuration first (redirect_url in the Keycloak Console and the .yaml file for helm upgrade ...)
+The simpliest case is Keycloak *without* persistence. You will need two objects:
+```
+kubectl create -f keycloak-depl-nopersist.yaml -f keycloak-svc.yaml
+```
+If you want to persist the Keycloak settings (which I recommend), you have to first install 
+![alttext](https://github.com/ChristofSchwarz/pics/raw/master/keycloak-opts.png "screenshot")
+
+It assumes Qlik Sense to be installed on IP 192.168.56.234 (the vagrant box we provisioned in this .git), if yours is different, pls edit the configuration first (redirect_url in the Keycloak Console and the .yaml file for helm upgrade ...)
 
 If you downloaded the yaml file from this git, go:
 ```
