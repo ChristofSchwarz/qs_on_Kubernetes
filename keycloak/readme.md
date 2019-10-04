@@ -67,7 +67,7 @@ Without further configuration, also this helm deployment won't persist (it start
 know if you managed a setup that persists, so I can share ...
 
 # Setting persistence with Postgre SQL
-I found a good guide here https://www.dirigible.io/blogs/2018/06/25/kubernetes_keycloak_postgresql_dirigible.html and here https://severalnines.com/database-blog/using-kubernetes-deploy-postgresql. Thanks for those contributions, you made my day.
+I found a good guide here https://www.dirigible.io/blogs/2018/06/25/kubernetes_keycloak_postgresql_dirigible.html and  https://severalnines.com/database-blog/using-kubernetes-deploy-postgresql and https://github.com/peterzandbergen/keycloak-kubernetes. Thanks for those contributions, made my day.
 
 
 # Errors 
