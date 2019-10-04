@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keycloak
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: keycloak
+  template:
+    metadata:
+      labels:
+        app: keycloak
+    spec:
+      containers:
+      - name: keycloak
+        image: jboss/keycloak
+        env:
+        - name: KEYCLOAK_USER
+          value: "admin"
+        - name: KEYCLOAK_PASSWORD
+          value: "admin"
+        - name: PROXY_ADDRESS_FORWARDING
+          value: "true"
+        - name: DB_VENDOR
+          value: "postgres"
+        - name: DB_DATABASE
+          value: "postgresdb"
+        - name: DB_USER
+          value: "pgadmin"
+        - name: DB_PASSWORD
+          value: "pgadmin"
+        - name: DB_ADDR
+          value: postgres-svc
+        ports:
+        - name: http
+          containerPort: 8080
+        - name: https
+          containerPort: 8443
+#        readinessProbe:
+#          httpGet:
+#            path: /auth/realms/master
+#            port: 8080
