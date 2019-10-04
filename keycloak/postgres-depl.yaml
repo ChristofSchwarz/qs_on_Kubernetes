@@ -1,12 +1,7 @@
-# thanks to this page https://severalnines.com/database-blog/using-kubernetes-deploy-postgresql
+# creates
+# - configmap postgres-config
+# - deployment postgres
 #
-# creating the following objects
-#
-#- configmap postgres-config
-#- deployment postgres
-#- service postgres-svc 
-#
----
 apiVersion: v1
 kind: ConfigMap
 metadata:
