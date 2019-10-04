@@ -42,7 +42,7 @@ touch /home/vagrant/.kube/config
 
 echo 'Starting minikube local cluster'
 
-minikube start --kubernetes-version v1.14.0 --memory 4096 --cpus=2 --vm-driver=none
+minikube start --kubernetes-version v1.14.0 --memory 4096 --cpus=2 --vm-driver=none --extra-config=apiserver.service-node-port-range=80-32767
 
 #sudo cp /root/.kube $HOME/.kube
 sudo chown -R vagrant /home/vagrant/.kube
