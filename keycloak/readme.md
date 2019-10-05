@@ -19,6 +19,8 @@ kubectl get pod |grep keycloak
 # or
 kubectl get pod -o=custom-columns=:.status.phase --selector=app=keycloak --no-headers
 ```
+Those reads helped me with setting up Keycloak on Postgres https://www.dirigible.io/blogs/2018/06/25/kubernetes_keycloak_postgresql_dirigible.html , https://severalnines.com/database-blog/using-kubernetes-deploy-postgresql , https://github.com/peterzandbergen/keycloak-kubernetes.
+
 
 ## Create a client on Keycloak to authenticate QSEoK users
 
@@ -77,8 +79,6 @@ https://github.com/codecentric/helm-charts/tree/master/charts/keycloak
 Without further configuration, also this helm deployment won't persist (it starts a separate postgres-db though). Let me 
 know if you managed a setup that persists, so I can share ...
 
-# Setting persistence with Postgre SQL
-I found a good guide here https://www.dirigible.io/blogs/2018/06/25/kubernetes_keycloak_postgresql_dirigible.html and  https://severalnines.com/database-blog/using-kubernetes-deploy-postgresql and https://github.com/peterzandbergen/keycloak-kubernetes. Thanks for those contributions, made my day.
 
 
 # Errors 
