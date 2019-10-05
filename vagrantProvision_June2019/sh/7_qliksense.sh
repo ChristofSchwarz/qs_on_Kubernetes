@@ -1,4 +1,6 @@
 
+echo 'executing 7_qliksense.sh ...'
+
 echo 'Adding stable and edge reop from qlik.bintray.com'
 helm repo add qlik-stable https://qlik.bintray.com/stable
 helm repo add qlik-edge https://qlik.bintray.com/edge
