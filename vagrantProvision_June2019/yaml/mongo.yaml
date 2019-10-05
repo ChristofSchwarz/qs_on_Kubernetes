@@ -1,8 +1,0 @@
-persistence:
-  enabled: true
-  existingClaim: pvc-mongo
-usePassword: true
-mongodbRootPassword: secretpassword
-mongodbUsername: qlik
-mongodbPassword: Qlik1234
-mongodbDatabase: qsefe
