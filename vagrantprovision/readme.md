@@ -1,4 +1,5 @@
 | --> There is a new version available here https://github.com/ChristofSchwarz/qseok_on_minikube | 
+|-------------------------|
 
  # Installing Qlik Sense Enterprise on Minikube
  
